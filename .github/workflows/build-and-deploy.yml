@@ -1,0 +1,41 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install
+        run: npm install
+
+      - name: Build 🔧 # Creates the build folder to deploy
+        run: npm run css:tailwind
+
+      - name: Copy 🔧 # Copies public folder to dest
+        run: npm run copy
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./build # The folder the action should deploy.
+          name: github-pages
+          retention-days: 1
+
+      - name:  Deploy  🚀
+        uses: actions/deploy-pages@v1
