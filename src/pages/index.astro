@@ -1,0 +1,241 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import StepsImage from "../assets/images/jopwell-collection/standing.png";
+import SuitImage from "../assets/images/jopwell-collection/nice-suit-1.png";
+
+
+const metadata = {
+  title: 'Calima - Secret Executive Society',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      // {
+      //   variant: 'primary',
+      //   text: 'Edit in Github',
+      //   href: 'https://github.com/calimania/calimania.github.io',
+      //   target: '_blank',
+      //   icon: 'tabler:download',
+      // },
+      { text: 'Learn more', href: '#features' },
+    ]}
+    image={{ src: '~/assets/images/ilustration-calima.jpg', alt: 'Calima' }}
+  >
+    <Fragment slot="title">
+      <span class="hidden xl:inline">Secret</span> Executive community
+      promoting international business collaboration
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">Calima</span> hosts online and physical spaces.</span>
+      <!-- <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span> -->
+       Suitable for latin american executives in the US and abroad
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="Features"
+    title="What you get with Calima"
+    subtitle="A very real and legitimate community that actually exists."
+    items={[
+      {
+        title: 'Executive coaching',
+        description:
+          'Our network of members support each other as coaches and partners',
+        icon: 'tabler:brand-tailwind',
+      },
+      {
+        title: 'Deal flow',
+        description:
+          'Find companies to acquire, invest and partner',
+        icon: 'tabler:components',
+      },
+      {
+        title: 'Technical services',
+        description:
+          'Extend your team with our product experts',
+        icon: 'tabler:list-check',
+      },
+      {
+        title: 'Social clubs',
+        description:
+          'Pop up events and pyshical locations coming soon',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Fractional executives',
+        description:
+          "Support your fundraising efforts with our experienced executives",
+        icon: 'tabler:arrows-right-left',
+      },
+      {
+        title: 'Culture of feedback',
+        description:
+          'SAFETy third',
+        icon: 'tabler:bulb',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="Inside template"
+    title="AstroWind's Blueprint: Fun Meets Functionality!"
+    items={[
+      {
+        title: 'Built on top of Astro 3.0',
+        description:
+          'This website is using HTML and other fancy technologies',
+      },
+      {
+        title: 'Collaboration over competition',
+        description:
+          'We like to follow advice from vague motivational quotes and have found ourselves very successful that way',
+      },
+      {
+        title: 'Cross-browser compatibility',
+        description:
+          'This site is optimized for Internet Explorer 5 and 720p monitors',
+      },
+    ]}
+    image={{
+      src: SuitImage.src,
+      alt: 'Colorful suits look great in great people',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Modern Approaches, Ancient Values</h3>
+       While our secret society has been around for decades its always been spearheading change
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Get your dreams to the next level."
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Join</span>',
+        description:
+          "Connect with current members to get invited",
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Learn from others</em>',
+        description:
+          "Join our workshops and events to learn from our mentors and existing members",
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Find collaborators</span>',
+        description:
+          'Share your projects and find investors and partners',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'Ready!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: StepsImage.src,
+      alt: 'Our executive members are standing tall',
+    }}
+  />
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <BlogLatestPosts
+    title="Find out more content in our Blog"
+    information={`Sharing useful updates about our community.`}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Dive into the following questions to gain insights into the power of our community."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Why Calima?',
+        description:
+          "We're the largest secret executive communtiy for latinx and BIPOC founders, investors and operators.",
+      },
+      {
+        title: 'How to get involved?',
+        description:
+          'Connect with a current member to get information about membership and the upcoming plans.',
+      },
+    ]}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Downloads', amount: '132K' },
+      { title: 'Stars', amount: '24.8K' },
+      { title: 'Forks', amount: '10.3K' },
+      { title: 'Users', amount: '48.4K' },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Edit this site',
+        href: 'https://github.com/calimania/calimania.github.io',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
+      waste more time! :P
+    </Fragment>
+  </CallToAction>
+
+</Layout>
