@@ -16,7 +16,7 @@ export async function getStaticPaths () {
   return await getStaticPathsBlogPost();
 }
 
-const { post } = Astro.props;
+const { post = { permalink: '', image: ''}} = Astro.props;
 
 const url = getCanonical(getPermalink(post.permalink, 'post'));
 const image = (await findImage(post.image)) as ImageMetadata | undefined;
