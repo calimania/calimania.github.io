@@ -4,6 +4,7 @@ import BlogList from '~/components/blog/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
 // import PostTags from "~/components/blog/Tags.astro";
+// import type { MetaData, Post } from '~/types';
 
 import { blogListRobots, getStaticPathsBlogList } from '~/utils/blog';
 
@@ -13,11 +14,8 @@ export async function getStaticPaths ({ paginate=null }) {
   return await getStaticPathsBlogList({ paginate });
 }
 
-const { page } = Astro.props;
-const currentPage = page.currentPage ?? 1;
-
-// const allCategories = await findCategories();
-// const allTags = await findTags();
+const page = Astro.props['page'] || {};
+const currentPage = page['currentPage'] ?? 1;
 
 const metadata = {
   title: `Blog${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
@@ -34,15 +32,11 @@ const metadata = {
 <Layout metadata={metadata}>
   <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
     <Headline
-      subtitle="A statically generated blog example with news, tutorials, resources and other interesting content related to AstroWind"
+      subtitle="A statically generated blog for with news from the community"
     >
-      The Blog
+      Calimania
     </Headline>
-    <BlogList posts={page.data} />
-    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
-    <!--
-      <PostTags tags={allCategories} class="mb-2" title="Search by Categories:" isCategory />
-      <PostTags tags={allTags}  title="Search by Tags:" />
-    -->
+    <BlogList posts={page['data']} />
+    <Pagination prevUrl={page['url']['prev']} nextUrl={page['url']['next']} />
   </section>
 </Layout>
