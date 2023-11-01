@@ -82,6 +82,10 @@ export const headerData = {
     //     },
     //   ],
     // },
+    {
+      text: 'Blog',
+      href: getBlogPermalink(),
+    },
     // {
     //   text: 'Blog',
     //   links: [
@@ -107,10 +111,10 @@ export const headerData = {
     //     },
     //   ],
     // },
-    {
-      text: 'Join',
-      href: '#',
-    },
+    // {
+    //   text: 'Join',
+    //   href: '#',
+    // },
   ],
   // actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
 };
