@@ -24,10 +24,10 @@ export const headerData = {
       //   },
       // ],
     },
-    // {
-    //   text: 'About us',
-    //   href: getPermalink('/about'),
-    // },
+    {
+      text: 'About us',
+      href: getPermalink('/about'),
+    },
     // {
     // text: 'Pages',
     // links: [
@@ -151,18 +151,18 @@ export const footerData = {
     //   { text: 'Status', href: '#' },
     // ],
     // },
-    // {
-    //   title: 'Company',
-    //   links: [
-    //     { text: 'About', href: '#' },
-    //     { text: 'Blog', href: '#' },
+    {
+      title: 'Company',
+      links: [
+        { text: 'About', href: '#' },
+        { text: 'Blog', href: '#' },
     //     { text: 'Careers', href: '#' },
     //     { text: 'Press', href: '#' },
     //     { text: 'Inclusion', href: '#' },
     //     { text: 'Social Impact', href: '#' },
     //     { text: 'Shop', href: '#' },
-    //   ],
-    // },
+      ],
+    },
   ],
   secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },

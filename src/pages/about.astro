@@ -1,0 +1,226 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'About us',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="About us"
+    image={{
+      src: '~/assets/images/jopwell-collection/group-1.png',
+      alt: 'Nos encanta reirnos en el club calima',
+    }}
+  >
+    <Fragment slot="title">
+      Club calima - the largest latinx <br />
+      <span class="text-accent dark:text-white highlight"> executive community</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Promoting international collaboration by inviting business leaders from different nations to collaborate.
+    </Fragment>
+  </Hero>
+
+  <!-- Stats Widget ****************** -->
+
+
+  <Stats
+    stats={[
+      { title: 'Witches', amount: '132K' },
+      { title: 'Clowns', amount: '24.8K' },
+      { title: 'Soup', amount: '48.4K' },
+    ]}
+  />
+
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Our programs"
+    subtitle="We graduated from business school with pretty good grades. now we're using our knowledge to help small business owners make it in this competitive world."
+    columns={3}
+    isBeforeContent={true}
+    items={[
+      {
+        title: 'Educational',
+        description:
+          "Workshops and coaching services to level up",
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Event production',
+        description:
+          'Conferences, summits, panels and other excuses to get together',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Hiring & Job creation',
+        description:
+          'Our network of talent spans all professions',
+        icon: 'tabler:template',
+      },
+    ]}
+  />
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    columns={3}
+    isAfterContent={true}
+    items={[
+      {
+        title: 'E-commerce',
+        description:
+          'Product discovery, international shipping, manufacturing, websites',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Writers',
+        description:
+          'Journalists, public relations and screen writers for consent manufacturing',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Business',
+        description:
+          'Adult business things and legitimate stuff',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Branding',
+        description:
+          'Marketing and creative experts with broad appeal',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Medical',
+        description:
+          'Medical providers and leading companies for medical and business goals',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Fashion Design',
+        description:
+          'Bluyin levantacolas al por mayor',
+        icon: 'tabler:template',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/ilustration-calima-about.png',
+      alt: 'The Calima people produce beautiful gold artifacts',
+    }}
+  />
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Our values"
+    subtitle="Our values are descriptive of our culture and evolving"
+    items={[
+      {
+        title: 'Big family',
+        description:
+          'Our community values creative cooperation and collaboration',
+      },
+      {
+        title: 'Constant Improvement',
+        description:
+          'The only way forward is faster',
+      },
+      {
+        title: 'Ethical Practices',
+        description:
+          'Loyalty to the sacreed racoon',
+      },
+    ]}
+  />
+
+  <!-- Steps2 Widget ****************** -->
+<!--
+  <Steps2
+    title="Achievements"
+    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
+    isReversed={true}
+    callToAction={{
+      text: 'See more',
+      href: '/',
+    }}
+    items={[
+      {
+        title: 'Global reach',
+        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
+        icon: 'tabler:globe',
+      },
+      {
+        title: 'Positive customer feedback and reviews',
+        description:
+          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
+        icon: 'tabler:message-star',
+      },
+      {
+        title: 'Awards and recognition as industry experts',
+        description:
+          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
+        icon: 'tabler:award',
+      },
+    ]}
+  /> -->
+
+  <!-- Features2 Widget ************** -->
+<!--
+  <Features2
+    title="Our locations"
+    tagline="Find us"
+    columns={4}
+    items={[
+      {
+        title: 'EE.UU',
+        description: '1234 Lorem Ipsum St, 12345, Miami',
+      },
+      {
+        title: 'Spain',
+        description: '5678 Lorem Ipsum St, 56789, Madrid',
+      },
+      {
+        title: 'Australia',
+        description: '9012 Lorem Ipsum St, 90123, Sydney',
+      },
+      {
+        title: 'Brazil',
+        description: '3456 Lorem Ipsum St, 34567, São Paulo',
+      },
+    ]}
+  /> -->
+
+  <!-- Features2 Widget ************** -->
+
+  <!-- <Features2
+    title="Technical Support"
+    tagline="Contact us"
+    columns={2}
+    items={[
+      {
+        title: 'Chat with us',
+        description:
+          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
+        icon: 'tabler:messages',
+      },
+      {
+        title: 'Call us',
+        description:
+          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
+        icon: 'tabler:headset',
+      },
+    ]}
+  /> -->
+</Layout>
