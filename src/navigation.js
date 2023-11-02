@@ -154,8 +154,8 @@ export const footerData = {
     {
       title: 'Company',
       links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
+        { text: 'About', href: '/about' },
+        { text: 'Blog', href: '/blog' },
     //     { text: 'Careers', href: '#' },
     //     { text: 'Press', href: '#' },
     //     { text: 'Inclusion', href: '#' },
@@ -163,6 +163,12 @@ export const footerData = {
     //     { text: 'Shop', href: '#' },
       ],
     },
+    {
+      title: 'Locations',
+      links: [
+        { text: 'Jersey City', href: '/jersey-city' }
+      ]
+    }
   ],
   secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },

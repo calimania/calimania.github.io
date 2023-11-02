@@ -1,0 +1,215 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+
+const metadata = {
+  title: 'Executive Club Calima - Jersey City',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      // {
+      { text: 'Learn more', href: '#features' },
+    ]}
+    image={{ src: '~/assets/images/skull.png', alt: 'Calima' }}
+  >
+    <Fragment slot="title">
+      Club Ejecutivo Calima - Jersey City
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">Calima</span> is coming to the USA.</span>
+        <br>
+      <!-- <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span> -->
+      Connecting and creating latinx executives and industry leaders to generate wealth for our communities
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="Facilities"
+    title="What you can find in our space"
+    subtitle="Business, Art, Global Family"
+    items={[
+      {
+        title: 'Flexible workspace',
+        description:
+          'Holistic startup and business space',
+        icon: 'tabler:brand-tailwind',
+      },
+      {
+        title: 'Azucá!',
+        description:
+          'For Colombian and latinx executives, government envoys, investors, founders and friends',
+        icon: 'tabler:components',
+      },
+      {
+        title: 'International community',
+        description:
+          'Repeatable and scalable with network effect',
+        icon: 'tabler:list-check',
+      },
+      {
+        title: 'Social clubs',
+        description:
+          'Events and workshops to benefit the wider community',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Multimedia studio',
+        description:
+          "Collaborate with artists to support your creative needs",
+        icon: 'tabler:arrows-right-left',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="Bienvenido a Jersey City"
+    title="Club Calima is an exclusive multicultural, open, inviting, and inclusive community"
+    items={[
+      {
+        title: 'Accesibility',
+        description:
+          'Perfect location with public transit options',
+      },
+      {
+        title: 'Diversity',
+        description:
+          'Most diverse city in the country, with multiple immigrant communities and food options',
+      },
+      {
+        title: 'Fundraising',
+        description:
+          'Proximity to capital in NYC and easy access to airports',
+      },
+      {
+        title: 'Quality of life',
+        description:
+          'Chilltown is consistently recognized as one of the best places to live in the U.S.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/jopwell-collection/work-team.png',
+      alt: 'Colorful suits look great in great people',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Jersey City</h3>
+      Culture, Commerce, Community
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Collaboration over competition."
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Join</span>',
+        description:
+          "Connect with current members to get invited",
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Learn from others</em>',
+        description:
+          "Attend our workshops and events to learn from our mentors and existing members",
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Find collaborators</span>',
+        description:
+          'Share your projects and find investors and partners',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'Profit!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/jopwell-collection/office-1.png',
+      alt: 'Our executive members are standing tall',
+    }}
+  />
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <BlogLatestPosts
+    title="Find out more content in our Blog"
+    information={`Sharing useful updates about our community.`}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Dive into the following questions to gain insights into the power of our community."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Why Calima?',
+        description:
+          "We're the largest secret executive communtiy for latinx and BIPOC founders, investors and operators.",
+      },
+      {
+        title: 'How to get involved?',
+        description:
+          'Connect with a current member to get information about membership and the upcoming plans.',
+      },
+      {
+        title: 'When can I visit?',
+        description:
+          'We\'re currently scouting locations to open in Q2\'24',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Check our deck',
+        href: 'https://docs.google.com/presentation/d/1LVikYaD4VEBmblFp8VHLRoa6VOAHoJIxV1eridfmT3w/edit?usp=sharing',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      More information
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Find more details about our plans in our real google slides presentation
+    </Fragment>
+  </CallToAction>
+
+</Layout>
