@@ -1,0 +1,102 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Tickets - Misión Comercial Calima - Jersey City Feb 2024',
+  image: '~/assets/images/jc-1.png'
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <Hero image={{ src: '~/assets/images/jc-1.png', alt: 'Mision Comercial Calima, Jersey City, feb 2024' }}>
+    <Fragment slot="title">
+       Misíon Comercial Calima<br/>
+        <small class="font-semibold">Pónele ritmo a tu negocio.</small>
+    </Fragment>
+    <Fragment slot="subtitle">
+        Club Ejecutivo Calima is connecting Colombian business owners and leaders with their US peers in a beautiful waterfront location.
+    </Fragment>
+  </Hero>
+
+    <!-- Tickets Widget ******************* -->
+    <a id="tickets"></a>
+    <Prices
+      title="Tickets"
+      subtitle="Multiple opportunities for everyone to participate"
+      prices={[
+        {
+          title: 'Comunidad',
+          subtitle: 'Ron pal que quiera, Ron pa todo el mundo',
+          price: '0',
+          period: '2 days full of learning and neworking opportunities',
+          items: [
+            { description: 'Keynote, speakers and panels' },
+            { description: 'Networking opportunities' },
+            { description: 'After hours' },
+          ],
+          callToAction: {
+            target: '_blank',
+            text: 'Register Now',
+            href: 'https://lu.ma/calimajc2024',
+          },
+        },
+        {
+          title: 'Ejecutivo',
+          subtitle: 'Las industrias, muevan las industrias, ',
+          price: 200,
+          period: 'VIP reception and additional networking opportunities',
+          items: [
+            { description: 'Keynote speakers and panels' },
+            { description: 'Networking opportunities' },
+            { description: 'After hours' },
+            { description: 'VIP reception' },
+          ],
+          callToAction: {
+            target: '_blank',
+            text: 'Save the date',
+            href: 'https://lu.ma/calimajc2024',
+          },
+          hasRibbon: true,
+          ribbonTitle: 'Buenisimo!',
+        },
+        {
+          title: 'VIP',
+          subtitle: 'Con esa gente diferente yo me codeo, qué tipo inteligente',
+          price: 1200,
+          period: 'Office hours and tailored networking opportunities',
+          items: [
+            { description: 'Keynote speakers and panels' },
+            { description: 'Additional keynote and workshops' },
+            { description: 'Networking opportunities' },
+            { description: 'After hours' },
+            { description: 'VIP reception' },
+            { description: 'Office hours' },
+          ],
+          callToAction: {
+            target: '_blank',
+            text: 'Save the date',
+            href: 'https://lu.ma/calimajc2024',
+          },
+        },
+      ]}
+    />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Be a part of the future"
+    subtitle="Register and receive updates about the event to your inbox"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Save the date in lu.ma',
+        href: 'https://lu.ma/calimajc2024',
+      },
+    ]}
+  />
+</Layout>

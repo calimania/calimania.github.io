@@ -1,0 +1,128 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Become a sponsor: Misión Comercial Calima - Jersey City Feb 2024',
+  image: '~/assets/images/jc-1.png'
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <Hero image={{ src: '~/assets/images/jc-1.png', alt: 'Mision Comercial Calima, Jersey City, feb 2024' }}>
+    <Fragment slot="title">
+       Misíon Comercial Calima<br/>
+        <small class="font-semibold">Pónele ritmo a tu negocio.</small>
+    </Fragment>
+    <Fragment slot="subtitle">
+        Club Ejecutivo Calima is connecting Colombian business owners and leaders with their US peers in a beautiful waterfront location.
+    </Fragment>
+  </Hero>
+
+  <!-- Features3 Widget ************** -->
+
+
+  <!-- Sponsor Widget ******************* -->
+  <a id="sponsor"></a>
+  <Prices
+    title="Sponsor Packages"
+    subtitle="Support the event and get your brand in front of a highly targeted audience"
+    prices={[
+      {
+        title: 'Oropel',
+        subtitle: 'Por eso la plata que cae en mis manos la gasto en manjares, bebida y bailando',
+        price: 2500,
+        period: 'Sponsor drinks and appetizers for a networking event (5 available)',
+        items: [
+          {
+            description: 'Facilitate a happy hour or networking opportunity',
+          },
+          {
+            description: '2 VIP passes',
+          },
+          {
+            description: 'Logo on the event website',
+          },
+        ],
+        callToAction: {
+          // target: '_blank',
+          text: 'Coming Soon',
+          href: '#sponsor',
+        },
+      },
+      {
+        title: 'Gardenias',
+        subtitle: 'No siempre hay que llegar primero, pero hay que saber llegar',
+        price: 7500,
+        period: 'Sponsor conference rooms and side events (2 available)',
+        items: [
+          {
+            description: 'Facilitate business connections during the conference',
+          },
+          {
+            description: '2 VIP passes',
+          },
+          {
+            description: 'Logo on the event website',
+          },
+          {
+            description: 'Joint press opportunities',
+          },
+        ],
+        callToAction: {
+          // target: '_blank',
+          text: 'Coming soon',
+          href: '#sponsor',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'Buenisimo!',
+      },
+      {
+        title: 'Bacilador',
+        subtitle: 'Voy a lo que voy, a volverme famoso, para ganar mi primer millón',
+        price: 20000,
+        period: 'Sponsor the venue (1 available)',
+        items: [
+          {
+            description: 'Become a key partner for the event',
+          },
+          {
+            description: '10 VIP passes',
+          },
+          {
+            description: 'Logo on the event website',
+          },
+          {
+            description: 'Joint press opportunities',
+          },
+          {
+            description: 'Join keynote speakers on stage',
+          },
+        ],
+        callToAction: {
+          // target: '_blank',
+          text: 'Coming soon',
+          href: '#sponsor',
+        },
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Be a part of the future"
+    subtitle="Register and receive updates about the event to your inbox"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Save the date in lu.ma',
+        href: 'https://lu.ma/calimajc2024',
+      },
+    ]}
+  />
+</Layout>
