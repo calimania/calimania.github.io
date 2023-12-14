@@ -166,7 +166,7 @@ export const footerData = {
     {
       title: 'Events',
       links: [
-        { text: 'Inaugural Summit - Feb\'24', href: '/summit/2024-jersey-city' },
+        { text: 'Inaugural Summit - March\'24', href: '/summit/2024-jersey-city' },
       ],
     },
     {
