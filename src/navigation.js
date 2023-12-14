@@ -164,6 +164,12 @@ export const footerData = {
       ],
     },
     {
+      title: 'Events',
+      links: [
+        { text: 'Inaugural Summit - Feb\'24', href: '/summit/2024-jersey-city' },
+      ],
+    },
+    {
       title: 'Locations',
       links: [
         { text: 'Jersey City', href: '/jersey-city' }
@@ -180,7 +186,7 @@ export const footerData = {
   socialLinks: [
     // { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/calimasc/' },
-    // { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
+    { ariaLabel: 'Lu.ma', icon: 'tabler:calendar-event', href: 'https://lu.ma/calima' },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/calimania/calimania.github.io' },
   ],
