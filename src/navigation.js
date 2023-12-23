@@ -186,6 +186,8 @@ export const footerData = {
   socialLinks: [
     // { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/calimasc/' },
+    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://linkedin.com/company/caliman/' },
+    { ariaLabel: 'LinkedIn Group', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/groups/12950275/' },
     { ariaLabel: 'Lu.ma', icon: 'tabler:calendar-event', href: 'https://lu.ma/calima' },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/calimania/calimania.github.io' },
