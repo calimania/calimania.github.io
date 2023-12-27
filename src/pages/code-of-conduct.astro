@@ -1,0 +1,88 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Code of Conduct',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Code Of Conduct"
+    image={{
+      src: '~/assets/images/jopwell-collection/collaborating-2.png',
+      alt: 'Un comportamiento ético implica, entre otros aspectos, respeto, honestidad, responsabilidad y empatía',
+    }}
+  >
+    <Fragment slot="title">
+      Club calima - the largest latinx <br />
+      <span class="text-accent dark:text-white highlight"> executive community</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      This Community Code of Conduct (“Code”) outlines our behavior expectations
+      as members of our community in our activities, both
+      offline and online.
+    </Fragment>
+  </Hero>
+
+  <p class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify">
+    In the interest of fostering an open and welcoming environment, we as
+    community members, contributors, Committers, and Project Leads
+    (collectively “members”) pledge to make participation in our projects
+    and our community a harassment-free and inclusive experience for everyone.
+  </p>
+  <p class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify">
+    <strong>Español</strong>: El Código de Conducta y Prácticas Responsables establece los criterios de
+    actuación que deben ser observados por miembros de la comunidad en el desempeño de
+    sus actividades. Tiene como objetivo procurar un
+    compromiso profesional, ético y responsable del club y de sus asociados,
+      en el desarrollo de sus actividades en cualquier parte del
+    mundo, como elemento básico de su cultura empresarial en la que se asienta
+    la formación y el desarrollo personal y profesional. A
+    tal efecto, se definen los principios y valores que deben regir las
+    relaciones entre el club y sus principales grupos de interés.
+  </p>
+
+  <Steps2
+    title="Our values"
+    subtitle="Our values are descriptive of our culture and evolving"
+    items={[
+      {
+        title: 'Be kind',
+        description:
+          'All community participants should feel welcome, regardless of their personal background',
+      },
+      {
+        title: 'Reach Out and Ask for Help',
+        description:
+          'Please inform our community operator or moderators if you feel a violation has taken place',
+      },
+      {
+        title: 'Be Respectful',
+        description:
+          'We expect all participants to be respectful when communicating with other participants',
+      },
+      {
+        title: 'Communicate and Collaborate',
+        description:
+          'The concept of the community is based on working together and participants will gain the most from the community by actively participating and communicating effectively',
+      },
+      {
+        title: 'Be receptive',
+        description:
+          'Gracefully accepting constructive criticism',
+      },
+      {
+        title: 'Assume good intentions',
+        description:
+          'Show empathy towards other community members',
+      },
+    ]}
+  />
+
+</Layout>

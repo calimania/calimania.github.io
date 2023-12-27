@@ -156,7 +156,8 @@ export const footerData = {
       links: [
         { text: 'About', href: '/about' },
         { text: 'Blog', href: '/blog' },
-    //     { text: 'Careers', href: '#' },
+        { text: 'Communities', href: '/communities' },
+        { text: 'Code of Conduct', href: '/code-of-conduct' },
     //     { text: 'Press', href: '#' },
     //     { text: 'Inclusion', href: '#' },
     //     { text: 'Social Impact', href: '#' },
