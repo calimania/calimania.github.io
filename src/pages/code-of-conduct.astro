@@ -2,6 +2,7 @@
 import Hero from '~/components/widgets/Hero.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Code of Conduct',
@@ -106,4 +107,24 @@ const metadata = {
     ]}
   />
 
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Join US',
+        href: '/communities',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Participate in our communities
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Collaborate and connect with other members
+    </Fragment>
+  </CallToAction>
 </Layout>
