@@ -173,6 +173,7 @@ export const footerData = {
     {
       title: 'Locations',
       links: [
+        { text: 'Cali', href: '/cali' },
         { text: 'Jersey City', href: '/jersey-city' }
       ]
     }

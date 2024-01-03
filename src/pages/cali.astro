@@ -1,0 +1,49 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Cali la sucursal del cielo',
+};
+---
+<style>
+  strong { color: white; }
+</style>
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Capital del pacifico"
+    image={{
+      src: '~/assets/images/posts/cali-sucursal.jpeg',
+      alt: 'Cali la sucursal del cielo',
+    }}
+  >
+    <Fragment slot="title">
+      Cali la Sucursal del cielo
+  </Fragment>
+
+    <Fragment slot="subtitle">
+      Así es la historia de nuestra amada Cali
+    </Fragment>
+  </Hero>
+  <div class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted  text-justify">
+    <h2 class="py-8 dark:text-white text-3xl font-heading">
+      El 25 de julio de 1536 Belalcázar fundó a Santiago de Cali
+    </h2>
+    <p class="">
+      Cuenta la historia que el fundador de Santiago de Cali fue un español llamado Sebastián de Belalcázar quien vino a América, en el tercer viaje que realizara Cristóbal Colón (1498).
+    </p>
+    <h2 class="py-8 dark:text-white text-3xl font-heading">
+      Cali luz de un nuevo cielo
+    </h2>
+    <p>
+      <strong>487 años soñados, vividos, bailados, resilientes</strong>
+    </p>
+    <p>
+      El grupo niche narra en nombre de todos los caleños que morimos al sentir su ausencia,
+      y que sentimos mucha pena al no ver sus montañas. Todos los caminos conducen hacia Cali.
+      Todo el mundo le canta, y todo el mundo la mima, y eso nos pone celosos, pero no nos vamos ni por miles.
+    </p>
+    <p><strong>Los derechos del hombre priman sobre las jerarquias impuestas</strong></p>
+  </div>
+</Layout>
