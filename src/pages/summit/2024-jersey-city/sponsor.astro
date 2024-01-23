@@ -1,7 +1,6 @@
  ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Prices from '~/components/widgets/Pricing.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
 
@@ -10,6 +9,7 @@ const metadata = {
   image: '~/assets/images/jc-1.png'
 };
 ---
+<!-- // import Prices from '~/components/widgets/Pricing.astro'; -->
 
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
@@ -50,6 +50,10 @@ const metadata = {
         description: 'Business community for spanish speakers in the US'
       },
       {
+        title: 'Hablo AI',
+        description: '(habloai.com) Machine learning models in spanish'
+      },
+      {
         title: 'AWS for startups',
         description: 'Community by AWS to support founders using their platform'
       },
@@ -73,7 +77,7 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <Prices
+  <!-- <Prices
     title="Sponsor Packages"
     subtitle="Support the event and get your brand in front of a highly targeted audience"
     prices={[
@@ -152,7 +156,7 @@ const metadata = {
         },
       },
     ]}
-  />
+  /> -->
 
   <!-- CallToAction Widget *********** -->
 
@@ -162,7 +166,7 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Register in lu.ma',
+        text: 'Pre-Register in lu.ma',
         href: 'https://lu.ma/calimajc2024',
       },
     ]}
