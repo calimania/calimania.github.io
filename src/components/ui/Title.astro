@@ -1,0 +1,18 @@
+---
+import type { Title } from "~/types";
+
+const {
+  order = 1,
+} = Astro.props as Title;
+---
+{order == 1 && (
+  <h1 class="py-4 text-base mx-auto font-bold leading-tighter tracking-tighter font-heading">
+    <slot />  <!-- children will go here -->
+  </h1>
+)}
+{order == 2 && (
+  <h2 class="py-2 text-base mx-auto font-bold leading-tighter tracking-tighter font-heading">
+    <slot />  <!-- children will go here -->
+  </h2>
+)}
+

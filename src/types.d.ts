@@ -107,6 +107,15 @@ export interface Headline {
   classes?: Record<string, string>;
 }
 
+export interface Title {
+  text?: string;
+  order?: number;
+}
+
+export interface Container {
+  children?: string;
+}
+
 interface TeamMember {
   name?: string;
   job?: string;

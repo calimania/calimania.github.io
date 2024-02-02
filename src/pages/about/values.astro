@@ -1,0 +1,128 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Container from '~/components/ui/Container.astro';
+import Title from '~/components/ui/Title.astro';
+import Paragraph from '~/components/ui/Paragraph.astro';
+
+const metadata = {
+  title: 'Club Calima - Abous Us - Values',
+};
+---
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Abous Us - Values"
+    image={{
+      src: '~/assets/images/jopwell-collection/group-2.png',
+      alt: 'Nuestra comunidad es muy importante',
+    }}
+  >
+    <Fragment slot="title">
+      Club calima  <br />
+      <span class="text-accent dark:text-white highlight"> executive community</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Our values help us to create the future we want to experience
+    </Fragment>
+  </Hero>
+  <Container>
+    <Title order={1}>
+      Values
+    </Title>
+    <Title order={2}>
+      We all belong here
+    </Title>
+    <Paragraph>
+      <strong>
+        To define a single Latin Jewish archetype is impossible - we are not a
+        monolith. We are multicultural, multiethnic, multiracial and carry our
+        Jewish heritage in unique and personal ways. Each one of us holds an
+        incredible, distinctive story and we gather together to celebrate our
+        individuality, while we also honor the intersections we may share. We are
+        connected to Judaism, we are connected to Latin America, and we are here
+        to learn from each other's journeys as we explore our own.
+      </strong>
+    </Paragraph>
+    <Title order={2}>Speak from the “I”</Title>
+    <Paragraph>
+      This agreement, “Speaking from the “I”,” invites us to be mindful about
+      making generalizations about others’ experiences. Rather than saying “You
+      know how…” (maybe we don’t know!) or using the second person to describe
+      what happened, try to come back to “I” statements - “I feel that all
+      community agreements always work for me.” It means owning our own
+      perspectives, which can be surprisingly empowering. Things change for us
+      when we’re grounded in and committed to our own experience.
+    </Paragraph>
+    <Title order={2}>Take space/make space</Title>
+    <Paragraph>
+      If you’re someone who hasn’t been speaking up in a communal space, consider
+      expanding yourself to open up and share your thoughts and feelings, even if
+      it feels like a risk. If you are someone who often talks a lot or has been
+      speaking up in a group setting, consider making space to allow airtime for
+      others. Not everyone will take up the same amount of airtime on every topic,
+      and that’s okay.
+    </Paragraph>
+    <Title order={2}>Honor confidentiality</Title>
+    <Paragraph>
+      If you want to talk more about something brought up in an emotional space,
+      it is good to check first whether that person wants to talk about what they
+      said. A recent suggestion we like is stories that are shared here, stay
+      here, and lessons that are learned here don’t only stay here.
+    </Paragraph>
+    <Title order={2}>Trust intent, tend to impact</Title>
+    <Paragraph>
+      We can assume people have good intentions, AND acknowledge any negative
+      impact and hurt done. People on both sides of an interaction can be aware of
+      intent and impact: that sometimes even if someone’s heart is in the right
+      place they can say something that hurts someone else, and that a negative
+      impact on me doesn’t equal ill will from you. Unintended consequences will
+      happen and it’s ok. The point is not to avoid difficult moments, and instead
+      use them as an opportunity to communicate, listen and grow. Don’t strive to
+      be perfect, strive to be real and learn.
+    </Paragraph>
+    <Title order={2}>Try it on</Title>
+    <Paragraph>
+      A good way to learn, grow, and stay engaged - in discussions, in community, in
+      life - is to try on new thoughts and points of view. It might mean trying on
+      an activity or a game or a song or a style that is challenging for you with a
+      positive attitude and openness. In a workshop, it might mean truly trying on
+      an idea or topic that you disagree with at first – knowing that you can take
+      it or leave it afterwards.
+    </Paragraph>
+    <Title order={2}>Listen to understand (versus listen to advise)</Title>
+    <Paragraph>
+      As it is our intention to create a safe space and container of bravery, we
+      seek to practice active listening with the aim of understanding. This is
+      different from listening to advise another group member or offer any
+      unrequested feedback. This agreement reminds us to arrive with an open mind as
+      well as an open heart.
+    </Paragraph>
+    <Title order={2}>Lead with curiosity</Title>
+    <Paragraph>
+      In the spirit of learning, we lead with curiosity and interest - for each
+      other, ourselves, and our collective learning experience. As we approach new
+      ideas or experiences, we encourage introspection and the practice of self
+      inquiry: What does this new idea offer me? How might it be different from what
+      I know or believe? What could I learn from this - in general or about myself?
+    </Paragraph>
+    <Title order={2}>Take care of your needs</Title>
+    <Paragraph>
+      Protecting your peace and your needs is one of our greatest priorities. As an
+      organization that seeks to elevate the importance of wellness in all realms of
+      life, please listen to the needs of your body, mind, and heart. Let us know
+      how we can support you and accommodate your needs during our sessions together
+      (and offline too!).
+    </Paragraph>
+    <Title order={2}>We are wise, share your wisdom</Title>
+    <Paragraph>
+      You have so much to offer from your lived experience as well as from the
+      wisdom within you from your ancestors. An idea we like to remember is, “there
+      is no one like you, there has never been anyone like you, and there will never
+      be anyone like you”. Please arrive as YOU - share your story, your wisdom, and
+      your journey with us. It is our greatest hope that as we learn and grow
+      together, we may all arrive as our whole selves to reflect our strengths back
+      to one another and rise higher than ever before.
+    </Paragraph>
+  </Container>
+</Layout>
