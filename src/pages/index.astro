@@ -4,14 +4,10 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-// import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-
 import StepsImage from "../assets/images/jopwell-collection/standing.png";
 import SuitImage from "../assets/images/jopwell-collection/nice-suit-1.png";
 
@@ -27,14 +23,7 @@ const metadata = {
 
   <Hero
     actions={[
-      // {
-      //   variant: 'primary',
-      //   text: 'Edit in Github',
-      //   href: 'https://github.com/calimania/calimania.github.io',
-      //   target: '_blank',
-      //   icon: 'tabler:download',
-      // },
-      { text: 'Learn more', href: '#features' },
+      { text: 'Inaugural Summit', href: '/summit/2024/brooklyn' },
     ]}
     image={{ src: '~/assets/images/ilustration-calima.jpg', alt: 'Calima' }}
   >
@@ -97,7 +86,7 @@ const metadata = {
       {
         title: 'Culture of feedback',
         description:
-          'SAFETy third',
+          'Our values help us to create the future we want to experience',
         icon: 'tabler:bulb',
       },
       {
@@ -215,38 +204,5 @@ const metadata = {
       },
     ]}
   />
-
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    stats={[
-      { title: 'Witches', amount: '132K' },
-      { title: 'Clowns', amount: '24.8K' },
-      { title: 'Soup', amount: '48.4K' },
-    ]}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Edit this site',
-        href: 'https://github.com/calimania/calimania.github.io',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
-    </Fragment>
-  </CallToAction>
 
 </Layout>
