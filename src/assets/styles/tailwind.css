@@ -107,6 +107,12 @@
   font-size: 1.2em;
 }
 
+/* .bg-dark {
+  background-color: var(--aw-color-bg-page-dark);
+} */
+.bg-page .calima-container a {
+  border-color: var(--aw-color-bg-page-dark);
+}
 .calima-container ul li {
   list-style-type: circle;
   margin-left: 1.2rem;
