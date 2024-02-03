@@ -18,14 +18,10 @@ metadata:
   openGraph:
     site_name: Calima
     images:
-      - url: '~/assets/images/calima-logo.png'
+      - url: '~/assets/images/brooklyn/calima-summit-brooklyn.png'
         width: 1200
-        height: 628
+        height: 630
     type: website
-  twitter:
-    handle: '@dvidsilva'
-    site: '@dvidsilva'
-    cardType: summary_large_image
 
 i18n:
   language: en
