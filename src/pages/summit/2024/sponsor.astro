@@ -1,0 +1,82 @@
+ ---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Become a sponsor: Calima Summit - Brooklyn March 25 & 26, 2024',
+  image: '~/assets/images/brooklyn/calima-summit-brooklyn-letters.png'
+};
+---
+<Layout metadata={metadata}>
+  <Hero image={{ src: '~/assets/images/brooklyn/calima-summit-brooklyn.png', alt: 'Mision Comercial Calima, Brooklyn, March 2024' }}>
+    <Fragment slot="title">
+       Calima Summit<br/>
+        <small class="font-semibold">Pónele ritmo a tu negocio.</small>
+    </Fragment>
+    <Fragment slot="subtitle">
+        Club Ejecutivo Calima is connecting Colombian business owners and leaders with their US peers.
+    </Fragment>
+  </Hero>
+  <!-- Features3 Widget ************** -->
+  <!-- LOGO AWS , COMMUNITY, CALIMA SUMMIT  -->
+  <!-- Sponsor Widget ******************* -->
+  <Content
+    tagline="Community Partners"
+    title="Thanks to our friends and supporters for making this happen"
+    items={[
+      {
+        title: 'Calima',
+        description: 'Community for latinx executives and business leaders',
+      },
+      {
+        title: 'Innpulsa Colombia',
+        description: 'Entrepreneurship and innovation agency of the National Government',
+      },
+      {
+        title: 'Sikuani',
+        description: 'Leading community to promote collaboration in the tech ecosystem'
+      },
+      {
+        title: 'Negozee',
+        description: 'Business community for spanish speakers in the US'
+      },
+      {
+        title: 'Hablo AI',
+        description: '(habloai.com) Machine learning models in spanish'
+      },
+      {
+        title: 'AWS for startups',
+        description: 'Community by AWS to support founders using their platform'
+      },
+      {
+        title: "SHPE NYC",
+        description: 'Largest association dedicated to fostering Hispanic leadership in the STEM field'
+      }
+    ]}
+    image={{
+      src: '~/assets/images/brooklyn/brooklyn-summit-calima-sponsors.png',
+      alt: 'Calima summit community partners',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Brooklyn</h3>
+      Culture, Commerce, Community
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+  <CallToAction
+    title="Be a part of the future"
+    subtitle="Register and receive updates about the event to your inbox"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Register in lu.ma',
+        href: 'https://lu.ma/calimajc2024',
+      },
+    ]}
+  />
+</Layout>

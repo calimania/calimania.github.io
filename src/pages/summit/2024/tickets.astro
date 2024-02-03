@@ -5,14 +5,14 @@ import Prices from '~/components/widgets/Pricing.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Tickets - Misión Comercial Calima - Jersey City March 2024',
-  image: '~/assets/images/jc-1.png'
+  title: 'Tickets - Misión Comercial Calima - Brooklyn March 2024',
+  image: '~/assets/images/brooklyn/calima-summit-brooklyn.png'
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
-  <Hero image={{ src: '~/assets/images/jc-1.png', alt: 'Mision Comercial Calima, Jersey City, March 2024' }}>
+  <Hero image={{ src: '~/assets/images/brooklyn/calima-summit-brooklyn.png', alt: 'Mision Comercial Calima, Brooklyn, March 2024' }}>
     <Fragment slot="title">
        Misíon Comercial Calima<br/>
         <small class="font-semibold">Pónele ritmo a tu negocio.</small>
@@ -31,7 +31,7 @@ const metadata = {
         {
           title: 'Comunidad',
           subtitle: 'Ron pal que quiera, Ron pa todo el mundo',
-          price: 0,
+          price: 100,
           period: '2 days full of learning and neworking opportunities',
           items: [
             { description: 'Keynote, speakers and panels' },
@@ -48,7 +48,7 @@ const metadata = {
         {
           title: 'Ejecutivo',
           subtitle: 'Las industrias, muevan las industrias',
-          price: 100,
+          price: 1000,
           period: 'VIP reception and additional networking opportunities',
           items: [
             { description: 'Keynote speakers and panels' },
@@ -66,16 +66,13 @@ const metadata = {
         },
       ]}
     />
-
-  <!-- CallToAction Widget *********** -->
-
   <CallToAction
     title="Be a part of the future"
     subtitle="Register and receive updates about the event to your inbox"
     actions={[
       {
         variant: 'primary',
-        text: 'Pre-Register in lu.ma',
+        text: 'Register in lu.ma',
         href: 'https://lu.ma/calimajc2024',
       },
     ]}

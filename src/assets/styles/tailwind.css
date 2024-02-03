@@ -88,3 +88,27 @@
 .dd *:first-child {
   margin-top: 0;
 }
+
+.calima-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.calima-container p {
+  padding-bottom: 1.5rem;
+}
+
+.calima-container a {
+  padding-bottom: 2px;
+  border-bottom: 1px solid white;
+  padding-right: 3px;
+  padding-left: 3px;
+  font-family: monospace;
+  font-size: 1.2em;
+}
+
+.calima-container ul li {
+  list-style-type: circle;
+  margin-left: 1.2rem;
+  padding-bottom: 0.6rem;
+}

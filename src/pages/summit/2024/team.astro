@@ -5,18 +5,15 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 
 const metadata = {
-  title: 'Team - Misión Comercial Calima - Jersey City March 2024',
-  image: '~/assets/images/jc-1.png'
+  title: 'Team - Misión Comercial Calima - Brooklyn March 25 & 26, 2024',
+  image: '~/assets/images/brooklyn/calima-summit-brooklyn.png'
 };
 ---
-
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <Hero image={{ src: '~/assets/images/jc-1.png', alt: 'Mision Comercial Calima, Jersey City, March  2024' }}>
+  <Hero image={{ src: '~/assets/images/brooklyn/calima-summit-brooklyn.png', alt: 'Mision Comercial Calima, Brooklyn, March  2024' }}>
     <Fragment slot="title">
        Misíon Comercial Calima<br/>
-        <small class="font-semibold">Team.</small>
+        <small class="font-semibold">Team</small>
     </Fragment>
     <Fragment slot="subtitle">
         Club Ejecutivo Calima is connecting Colombian business owners and
@@ -34,7 +31,7 @@ const metadata = {
       name: 'Daveed Silva',
       job: 'CTO - AWSM',
       image: {
-        src: '~/assets/images/jersey-city-2024/team-daveed.jpg',
+        src: '~/assets/images/brooklyn/team-daveed.jpg',
         alt: 'Daveed Silva image',
       },
     },
@@ -84,7 +81,7 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Preregister',
+        text: 'Registare',
         href: 'https://lu.ma/calimajc2024',
       },
     ]}

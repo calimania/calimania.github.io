@@ -1,0 +1,74 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Container from '~/components/ui/Container.astro';
+import Title from '~/components/ui/Title.astro';
+import Paragraph from '~/components/ui/Paragraph.astro';
+
+const metadata = {
+  title: 'Cali la sucursal del cielo',
+};
+---
+<style>
+  strong { color: white; }
+</style>
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Unity makes strength"
+    image={{
+      src: '~/assets/images/brooklyn/calima-summit-brooklyn.png',
+      alt: 'Brooklyn - Unity makes strength',
+    }}
+  >
+    <Fragment slot="title">
+      Brooklyn
+  </Fragment>
+
+    <Fragment slot="subtitle">
+      Así es la historia de Brooklyn
+    </Fragment>
+  </Hero>
+  <Container>
+    <Title>Your Guide to the Brooklyn Startup Scene</Title>
+    <Paragraph>
+      Manhattan can no longer claim to be NYC’s sole tech hub. With its allure of vast office spaces and lower rent, Brooklyn has become an attractive spot for startups. To brush up on your knowledge of the community, we’ve compiled a list of some of the startups and tech companies that have set up shop in the city’s most populous borough.
+    </Paragraph>
+    <a href="https://www.builtinnyc.com/guides/brooklyn-tech-startup-scene" target="_blank" rel="nofollow">Read more</a>
+
+    <Title>Plot</Title>
+    <Paragraph>
+      An Irish immigrant lands in 1950s Brooklyn, where she quickly falls into a romance with a local. When her past catches up with her, however, she must choose between two countries and the lives that exist within.
+    </Paragraph>
+    <a href="https://www.imdb.com/title/tt2381111/" target="_blank" rel="nofollow">Read more</a>
+    <Title>Barrio Collective</Title>
+    <Paragraph>
+      We aspire to be a welcoming platform for artists new to New York who have yet to find their place within a creative community. Our goal is to be a launchpad for their passion projects, and to instill the confidence to pursue their dreams.
+    </Paragraph>
+    <a href="https://www.barriocollective.us/" target="_blank" rel="nofollow">Read more</a>
+    <Title>Summit</Title>
+    <Paragraph>Join us for our inaugural summit in Boroklyn, March 25 and 26, 2024 </Paragraph>
+    <a href="/summit/2024/brooklyn/">Read more</a>
+  </Container>
+
+  <!-- <div class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted  text-justify">
+    <h2 class="py-8 dark:text-white text-3xl font-heading">
+      El 25 de julio de 1536 Belalcázar fundó a Santiago de Cali
+    </h2>
+    <p class="">
+      Cuenta la historia que el fundador de Santiago de Cali fue un español llamado Sebastián de Belalcázar quien vino a América, en el tercer viaje que realizara Cristóbal Colón (1498).
+    </p>
+    <h2 class="py-8 dark:text-white text-3xl font-heading">
+      Cali luz de un nuevo cielo
+    </h2>
+    <p>
+      <strong>487 años soñados, vividos, bailados, resilientes</strong>
+    </p>
+    <p>
+      El grupo niche narra en nombre de todos los caleños que morimos al sentir su ausencia,
+      y que sentimos mucha pena al no ver sus montañas. Todos los caminos conducen hacia Cali.
+      Todo el mundo le canta, y todo el mundo la mima, y eso nos pone celosos, pero no nos vamos ni por miles.
+    </p>
+    <p><strong>Los derechos del hombre priman sobre las jerarquias impuestas</strong></p>
+  </div> -->
+</Layout>

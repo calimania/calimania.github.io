@@ -1,0 +1,50 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Container from '~/components/ui/Container.astro';
+import { Content as Body } from '~/content/post/2024/summit-march-25-en.mdx';
+
+const metadata = {
+  title: 'Calima Inaugural Summit - Brooklyn, March 25 & 26, 2024',
+  image: '~/assets/images/brooklyn/calima-summit-brooklyn-letters.png'
+};
+---
+<Layout metadata={metadata}>
+  <Hero image={{ src: '~/assets/images/brooklyn/calima-summit-brooklyn.png', alt: 'Calima Summit, Brooklyn -  March 25 & 26, 2024' }}>
+    <Fragment slot="title">
+       Calima Inaugural Summit<br/>
+        <small class="font-semibold">Pónele ritmo a tu negocio.</small>
+    </Fragment>
+    <Fragment slot="subtitle">
+        Club Calima is connecting Colombian business leaders with their peers in the US.
+    </Fragment>
+  </Hero>
+  <Container>
+    <Body></Body>
+  </Container>
+  <CallToAction
+    title="Be a part of the future"
+    subtitle="Register and receive updates about the event to your inbox"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Register in lu.ma',
+        href: 'https://lu.ma/calimajc2024',
+      },
+    ]}
+  />
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      var links = document.querySelectorAll('a');
+      links.forEach(function(link) {
+          const href = link.getAttribute('href') as string;
+          if (href.startsWith('http://') || href.startsWith('https://')) {
+              link.setAttribute('target', '_blank');
+              link.setAttribute('rel', 'noopener noreferrer'); // This is for security
+          }
+      });
+  });
+</script>

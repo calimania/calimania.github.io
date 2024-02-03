@@ -8,13 +8,13 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
 
 const metadata = {
-  title: 'Calima Summit - Jersey City, March 25 - 26 2024',
-  image: '~/assets/images/jc-1.png'
+  title: 'Calima Summit - Brooklyn, March 25 - 26 2024',
+  image: '~/assets/images/brooklyn/calima-summit-brooklyn-letters.png'
 };
 ---
 
 <Layout metadata={metadata}>
-  <Hero image={{ src: '~/assets/images/jc-1.png', alt: 'Mision Comercial Calima, Jersey City, march 2024' }}>
+  <Hero image={{ src: '~/assets/images/brooklyn/calima-summit-brooklyn.png', alt: 'Mision Comercial Calima, Brooklyn, march 2024' }}>
     <Fragment slot="title">
        Calima Summit<br/>
         <small class="font-semibold">Pónele ritmo a tu negocio.</small>
@@ -67,7 +67,7 @@ const metadata = {
 
   <Content
   isReversed
-  tagline="Bienvenido a Jersey City"
+  tagline="Bienvenido a Brooklyn"
   title="March 25 - 26, 2024"
   ></Content>
 
@@ -117,7 +117,7 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Preregister in lu.ma',
+        text: 'Register in lu.ma',
         href: 'https://lu.ma/calimajc2024',
       },
     ]}
@@ -154,12 +154,12 @@ const metadata = {
       }
     ]}
     image={{
-      src: '~/assets/images/jersey-city-2024/sponsors-sidebar.png',
+      src: '~/assets/images/brooklyn/brooklyn-summit-calima-sponsors.png',
       alt: 'Calima summit community partners',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Jersey City</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Brooklyn</h3>
       Culture, Commerce, Community
     </Fragment>
 
@@ -168,7 +168,7 @@ const metadata = {
     </Fragment>
   </Content>
 
-
+<!--
   <CallToAction
     title="Learn More"
     subtitle="Read the announcement in our blog and learn more about the event"
@@ -184,7 +184,7 @@ const metadata = {
         href: 'https://caliman.org/calima-summit-es/',
       },
     ]}
-  />
+  /> -->
 
 
 
@@ -195,7 +195,7 @@ const metadata = {
       {
         variant: 'secondary',
         text: 'Learn more',
-        href: '/summit/2024-jersey-city/sponsor',
+        href: '/summit/2024/sponsor',
       },
     ]}
   />
