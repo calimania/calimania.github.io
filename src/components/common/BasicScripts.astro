@@ -3,6 +3,26 @@ import { UI } from '~/utils/config';
 ---
 
 <script is:inline define:vars={{ defaultTheme: UI.theme }}>
+    // <!-- MailerLite Universal -->
+    (function mailLiter() {
+      var ml = undefined;
+      var script  = document.createElement('script'),
+        head = document.head || document.getElementsByTagName('head')[0];
+      script.src = 'https://assets.mailerlite.com/js/universal.js';
+      script.async = false; // optionally
+      script.addEventListener('load', () => {
+        try {
+          ml('account', '812212');
+        } catch (error) {
+          console.log('MailerLite Universal not loaded');
+        }
+      });
+      head.insertBefore(script, head.firstChild);
+      console.log({a: 'a'})
+      // (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+      // (window,document,'script','','ml');
+    })();
+
   function applyTheme(theme) {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
