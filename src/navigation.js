@@ -167,7 +167,9 @@ export const footerData = {
     {
       title: 'Events',
       links: [
-        { text: 'Inaugural Summit - March\'24', href: '/summit/2024/brooklyn' },
+        { text: 'Inaugural Summit - June\'5-6', href: '/summit/2024/brooklyn' },
+        { text: 'Happy Hour - March\'27', href: 'https://lu.ma/calima-hh-march' },
+
       ],
     },
     {
