@@ -2,7 +2,7 @@
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
+// import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
@@ -40,8 +40,15 @@ const metadata = {
       condiciones necesarias para el ejercicio de los derechos y deberes
       constitucionales, mediante la prestación oportuna de los Bienes, Obras y
       Servicios en procura del mejoramiento del bienestar y la calidad de vida
-      de los ciudadanos y ciudadanas.
+      de los miembros.
   </p>
+  <p class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify">
+    To consolidate a fair and equitable community, which provides the necessary
+    conditions for the exercise of constitutional rights and duties, through the
+    timely provision of Goods, Works and Services in order to improve the
+    well-being and quality of life of members.
+  </p>
+
   <h1 class="px-4 sm:px-6 max-w-3xl mx-auto text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading">
     Visión
   </h1>
@@ -55,17 +62,16 @@ const metadata = {
     respetuoso de la diversidad y por los avances relacionados con la protección
     y expansión solidaria de la vida en todas sus manifestaciones
   </p>
-
-  <Stats
-    stats={[
-      { title: 'Witches', amount: '132K' },
-      { title: 'Clowns', amount: '24.8K' },
-      { title: 'Soup', amount: '48.4K' },
-    ]}
-  />
-
-
-  <!-- Features3 Widget ************** -->
+  <p class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify">
+    We will be recognized in the national and international sphere for our work
+    to improve quality of life, with a harmonious ecological and environmental
+    relationship, for a commitment to productive and business revitalization,
+    for advances in transforming the energy matrix towards alternative sources,
+    for cultural and sports processes of high value, for a commitment to peace
+    and reconciliation, for respectful citizen recognition of diversity and for
+    advances related to the protection and solidarity expansion of life in all
+    its manifestations.
+  </p>
 
   <Features3
     title="Our programs"
@@ -73,77 +79,41 @@ const metadata = {
     columns={3}
     isBeforeContent={true}
     items={[
+
       {
-        title: 'Educational',
+        title: 'Event production',
+        description:
+          'Conferences, summits, panels and community productions to advance our common goals',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Fractional executives',
+        description:
+          'Some of our members can make themselves available to help you with your business',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Workforce development',
         description:
           "Workshops and coaching services to level up",
         icon: 'tabler:template',
       },
       {
-        title: 'Event production',
+        title: 'Fun and Workspaces',
         description:
-          'Conferences, summits, panels and other excuses to get together',
+          "Physical and virtual spaces for collaboration and fun",
         icon: 'tabler:template',
       },
       {
-        title: 'Hiring & Job creation',
+        title: 'Country Club',
         description:
-          'Our network of talent spans all professions',
+          "Inclussive access to exclusive spaces",
         icon: 'tabler:template',
       },
     ]}
   />
 
-  <!-- Features3 Widget ************** -->
 
-  <Features3
-    columns={3}
-    isAfterContent={true}
-    items={[
-      {
-        title: 'E-commerce',
-        description:
-          'Product discovery, international shipping, manufacturing, websites',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Writers',
-        description:
-          'Journalists, public relations and screen writers for consent manufacturing',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Business',
-        description:
-          'Adult business things and legitimate stuff',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Marketing and creative experts with broad appeal',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Medical',
-        description:
-          'Medical providers and leading companies for medical and business goals',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'Bluyin levantacolas al por mayor',
-        icon: 'tabler:template',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/ilustration-calima-about.png',
-      alt: 'The Calima people produce beautiful gold artifacts',
-    }}
-  />
-
-  <!-- Steps2 Widget ****************** -->
 
   <Steps2
     title="Our values"
@@ -185,99 +155,4 @@ const metadata = {
     title="Code of Conduct"
     subtitle="Un comportamiento ético implica, entre otros aspectos, respeto, honestidad, responsabilidad y empatía"
   />
-  <!-- Steps2 Widget ****************** -->
-<!--
-  <Steps2
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
-    isReversed={true}
-    callToAction={{
-      text: 'See more',
-      href: '/',
-    }}
-    items={[
-      {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
-        icon: 'tabler:globe',
-      },
-      {
-        title: 'Positive customer feedback and reviews',
-        description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
-        icon: 'tabler:message-star',
-      },
-      {
-        title: 'Awards and recognition as industry experts',
-        description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
-        icon: 'tabler:award',
-      },
-    ]}
-  /> -->
-
-  <!-- Features2 Widget ************** -->
-<!--
-  <Features2
-    title="Our locations"
-    tagline="Find us"
-    columns={4}
-    items={[
-      {
-        title: 'EE.UU',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
-      },
-      {
-        title: 'Spain',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
-      },
-      {
-        title: 'Australia',
-        description: '9012 Lorem Ipsum St, 90123, Sydney',
-      },
-      {
-        title: 'Brazil',
-        description: '3456 Lorem Ipsum St, 34567, São Paulo',
-      },
-    ]}
-  /> -->
-
-  <!-- Features2 Widget ************** -->
-
-  <!-- <Features2
-    title="Technical Support"
-    tagline="Contact us"
-    columns={2}
-    items={[
-      {
-        title: 'Chat with us',
-        description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
-        icon: 'tabler:messages',
-      },
-      {
-        title: 'Call us',
-        description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
-        icon: 'tabler:headset',
-      },
-    ]}
-  /> -->
-
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Edit this site',
-        href: 'https://github.com/calimania/calimania.github.io',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
-    </Fragment>
-  </CallToAction>
-
 </Layout>
