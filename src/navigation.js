@@ -196,6 +196,7 @@ export const footerData = {
     { ariaLabel: 'Lu.ma', icon: 'tabler:calendar-event', href: 'https://lu.ma/calima' },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/calimania/calimania.github.io' },
+    { ariaLabel: 'CrunchBase', icon: 'tabler:brand-crunchbase', href: 'https://www.crunchbase.com/organization/kalima-d4f6' },
   ],
   footNote: `
     Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="#/"> Calima</a> · All rights reserved.
