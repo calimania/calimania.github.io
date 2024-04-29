@@ -16,13 +16,15 @@ const { metadata , redirect = '' } = Astro.props;
 ---
 
 <Layout metadata={metadata} redirect={redirect}>
-  <slot name="header">
-    <Header {...headerData} isSticky showRssFeed showToggleTheme />
-  </slot>
-  <main>
-    <slot />
-  </main>
-  <slot name="footer">
-    <Footer {...footerData} />
-  </slot>
+  {!redirect && (<>
+    <slot name="header">
+      <Header {...headerData} isSticky showRssFeed showToggleTheme />
+    </slot>
+    <main>
+      <slot />
+    </main>
+    <slot name="footer">
+      <Footer {...footerData} />
+    </slot>
+  </>)}
 </Layout>
