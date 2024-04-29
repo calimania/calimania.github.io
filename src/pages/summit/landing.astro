@@ -1,0 +1,16 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Tickets - Misión Comercial Calima - Brooklyn March 2024',
+  image: '~/assets/images/brooklyn/calima-summit-brooklyn.png'
+};
+
+const redirect = 'https://awsmvc.notion.site/Club-Calima-NYC-Tech-Week-Summit-a90fd2b36fa44f1688edf60df8fb2b04?refresh';
+---
+
+<Layout metadata={metadata} redirect={redirect}>
+</Layout>

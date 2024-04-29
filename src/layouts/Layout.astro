@@ -16,9 +16,10 @@ import type { MetaData as MetaDataType } from '~/types';
 
 export interface Props {
   metadata?: MetaDataType;
+  redirect?: string;
 }
 
-const { metadata = {} } = Astro.props;
+const { metadata = {}, redirect = '' } = Astro.props;
 const { language, textDirection } = I18N;
 ---
 
@@ -33,6 +34,12 @@ const { language, textDirection } = I18N;
     <Metadata {...metadata} />
     <SiteVerification />
     <Analytics />
+    {redirect ? (
+      <meta
+        http-equiv="refresh"
+        content={ `0; url=${ redirect }` }
+      />
+    ) : null}
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">
