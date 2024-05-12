@@ -1,0 +1,40 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'The home of Uncle Sam',
+};
+---
+<style>
+  strong { color: white; }
+</style>
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="the home of Uncle Sam"
+    image={{
+      src: '~/assets/images/about/troy.jpeg',
+      alt: 'Club Calima in Troy, NY',
+    }}
+  >
+    <Fragment slot="title">
+      Troy, NY
+    </Fragment>
+
+    <Fragment slot="subtitle">
+
+    </Fragment>
+  </Hero>
+  <div class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted  text-justify">
+    <h2 class="py-8 dark:text-white text-3xl font-heading">
+      A lovely gem in upstate New York
+    </h2>
+    <p class="mb-5">
+      Troy is a city in the United States state of New York and is the county seat of Rensselaer County, New York. It's famous for being the home of Uncle Sam, known as the person who supplied beef for the United States Army during the War of 1812
+    </p>
+    <p>
+      Living in Troy offers residents an urban suburban mix feel and most residents rent their homes. In Troy there are a lot of bars, coffee shops, and parks. Many families and young professionals live in Troy and residents tend to have moderate political views. The public schools in Troy are above average.
+    </p>
+  </div>
+</Layout>

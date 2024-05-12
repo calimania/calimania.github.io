@@ -168,7 +168,7 @@ export const footerData = {
       title: 'Events',
       links: [
         { text: 'Inaugural Summit - June\'5-6', href: '/summit/2024/brooklyn' },
-        { text: 'Happy Hour - March\'27', href: 'https://lu.ma/calima-hh-march' },
+        // { text: 'Happy Hour - March\'27', href: 'https://lu.ma/calima-hh-march' },
 
       ],
     },
@@ -176,6 +176,7 @@ export const footerData = {
       title: 'Locations',
       links: [
         { text: 'Cali', href: '/cali' },
+        { text: 'Troy', href: '/troy' },
         { text: 'Jersey City', href: '/jersey-city' },
         { text: 'Brooklyn', href: '/brooklyn' }
       ]
