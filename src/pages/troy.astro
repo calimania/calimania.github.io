@@ -1,10 +1,18 @@
 ---
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import type { MetaData } from '~/types';
 
 const metadata = {
   title: 'The home of Uncle Sam',
-};
+  openGraph: {
+    images: [{
+      url: '~/assets/images/about/troy.jpeg',
+      width: 1024,
+      height: 576
+    }]
+  }
+} as MetaData;
 ---
 <style>
   strong { color: white; }

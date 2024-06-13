@@ -1,10 +1,17 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import type { MetaData } from '~/types';
 
 const metadata = {
   title: 'Club San Fernando NYS - Fundraiser',
-  image: '~/assets/images/san_fernando/cover.png'
-};
+  openGraph: {
+    images: [{
+      url: '~/assets/images/san_fernando/cover.png',
+      width: 1200,
+      height: 1200,
+    }]
+  }
+} as MetaData;
 
 const redirect = 'https://www.gofundme.com/f/san-fernando-nys';
 ---
