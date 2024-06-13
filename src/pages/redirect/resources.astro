@@ -1,0 +1,19 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import type { MetaData } from '~/types';
+
+const metadata = {
+  title: 'Club Calima - Business Resources & Partners',
+  openGraph: {
+    images: [{
+      url: '~/assets/images/recursos.png',
+      width: 1706,
+      height: 1146,
+    }]
+  }
+} as MetaData;
+
+const redirect = 'https://awsmvc.notion.site/Partners-and-Service-Providers-6c0142d84bb741d7a24bb8ca98b0fd33?pvs=74?refresh';
+---
+
+<Layout metadata={metadata} redirect={redirect}/>
