@@ -1,0 +1,19 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import type { MetaData } from '~/types';
+
+const metadata = {
+  title: 'Startup Weekend Latinx HHM 2024',
+  openGraph: {
+    images: [{
+      url: '~/assets/images/posts/startup-weekend-2018.png',
+      width: 1200,
+      height: 913,
+    }]
+  }
+} as MetaData;
+
+const redirect = 'https://awsmvc.notion.site/Startup-Weekend-Latinx-HHM-2024-1340c1e968f84647ba5dc32b5f688a04?pvs=refresh';
+---
+
+<Layout metadata={metadata} redirect={redirect}/>
