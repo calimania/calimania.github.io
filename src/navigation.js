@@ -175,6 +175,7 @@ export const footerData = {
     {
       title: 'Services & Projects',
       links: [
+        { text: 'Startup Weekend Latinx 2024', href: '/2024/startup-weekend-hhm' },
         { text: 'Club San Fernando NYS', href: '/san_fernando_notion' },
         { text: 'Fractional Executives', href: '/2024/fractional-executives' },
         { text: 'The Germinator Colombia', href: '/redirect/germinator' },
