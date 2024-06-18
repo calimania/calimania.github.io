@@ -164,13 +164,21 @@ export const footerData = {
     //     { text: 'Shop', href: '#' },
       ],
     },
-    {
-      title: 'Events',
-      links: [
-        { text: 'Inaugural Summit - June\'5-6', href: '/summit/2024/brooklyn' },
-        // { text: 'Happy Hour - March\'27', href: 'https://lu.ma/calima-hh-march' },
+    // {
+    //   title: 'Events',
+    //   links: [
+    //     { text: 'Inaugural Summit - June\'5-6', href: '/summit/2024/brooklyn' },
+    //     // { text: 'Happy Hour - March\'27', href: 'https://lu.ma/calima-hh-march' },
 
-      ],
+    //   ],
+    // },
+    {
+      title: 'Services & Projects',
+      links: [
+        { text: 'Club San Fernando NYS', href: '/san_fernando_notion' },
+        { text: 'Fractional Executives', href: '/2024/fractional-executives' },
+        { text: 'The Germinator Colombia', href: '/redirect/germinator' },
+      ]
     },
     {
       title: 'Locations',

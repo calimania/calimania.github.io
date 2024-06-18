@@ -1,0 +1,19 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import type { MetaData } from '~/types';
+
+const metadata = {
+  title: 'Club Calima Fractional Executive Community',
+  openGraph: {
+    images: [{
+      url: '~/assets/images/posts/calima.execs.png',
+      width: 1200,
+      height: 801,
+    }]
+  }
+} as MetaData;
+
+const redirect = 'https://awsmvc.notion.site/Fractional-Executive-Services-d3ac49131db64a8e88a97bdfeea5be39?refresh';
+---
+
+<Layout metadata={metadata} redirect={redirect}/>

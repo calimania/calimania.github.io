@@ -16,7 +16,9 @@ const metadata = {
     tagline="Online Presence"
     title="Participate in our variety of online communities"
     subtitle="Follow our updates and connect with other members of the club"
-    actions={[{ variant:"primary", target: '_blank', text: 'Start exploring', href: '/' }]}
+    actions={[
+      // { variant:"primary", target: '_blank', text: 'Start exploring', href: '/' }
+    ]}
     image={{
       src: '~/assets/images/jopwell-collection/group-1.png',
       alt: 'Typing with our friends',
@@ -210,21 +212,42 @@ const metadata = {
   <CallToAction
     actions={[{
       variant: "primary",
-      text: 'Request an invite',
-      href: '/2024/slack',
+      text: 'Follow',
+      href: 'https://lu.ma/calima',
     }]}
-    title="Slack"
-    subtitle="Join us in slack to connect with other members and participate in the community"
+    title="Lu.ma"
+    subtitle="Events like summits and local happy hours"
   />
 
   <CallToAction
     actions={[{
       variant: "primary",
-      text: 'Join',
-      href: 'https://www.linkedin.com/groups/12950275',
+      text: 'Follow',
+      href: 'https://www.instagram.com/calimasc/',
     }]}
-    title="LinkedIn Group"
-    subtitle="Updates from our LinkedIn page, events, requests and offers by other members"
+    title="Instagram"
+    subtitle="Social posts and stories"
+  />
+
+  <CallToAction
+  actions={[{
+    variant: "primary",
+    text: 'Join',
+    href: 'https://www.linkedin.com/groups/12950275',
+  }]}
+  title="LinkedIn Group"
+  subtitle="Updates from our LinkedIn page, events, requests and offers by other members"
+/>
+
+
+  <CallToAction
+    actions={[{
+      variant: "primary",
+      text: 'Request an invite',
+      href: '/2024/slack',
+    }]}
+    title="Club Calima Slack"
+    subtitle="Join us in slack to connect with other members and participate in the community"
   />
 
 <CallToAction
@@ -237,24 +260,5 @@ const metadata = {
   subtitle="Issues, pull requests and conversations about our websites and tools"
 />
 
-<CallToAction
-  actions={[{
-    variant: "primary",
-    text: 'Follow',
-    href: 'https://lu.ma/calima',
-  }]}
-  title="Lu.ma"
-  subtitle="Events like summits and local happy hours"
-/>
-
-<CallToAction
-  actions={[{
-    variant: "primary",
-    text: 'Follow',
-    href: 'https://www.instagram.com/calimasc/',
-  }]}
-  title="Instagram"
-  subtitle="Social posts and stories"
-/>
 
 </Layout>

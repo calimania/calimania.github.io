@@ -1,0 +1,19 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import type { MetaData } from '~/types';
+
+const metadata = {
+  title: 'The Germinator - dedicated to preserving and restoring the unique and fragile ecosystem of the páramo in Colombia',
+  openGraph: {
+    images: [{
+      url: '~/assets/images/posts/the-germinator.png',
+      width: 1706,
+      height: 1146,
+    }]
+  }
+} as MetaData;
+
+const redirect = 'https://awsmvc.notion.site/The-Germinator-Bogota-Colombia-da6dc035a7224383b7cb880a260c63de?refresh';
+---
+
+<Layout metadata={metadata} redirect={redirect}/>
