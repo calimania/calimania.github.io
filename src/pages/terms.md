@@ -7,6 +7,12 @@ _Last updated_: January 06, 2023
 
 Please read these terms and conditions carefully before using Our Service.
 
+## Other Policies
+
+- [Anti-Bribery and Anti-Corruption Policy](/policies/bribery)
+- [Privacy Policy](/policies/privacy)
+- [Service Policy](/policies/service)
+
 ## Interpretation and Definitions
 
 ### Interpretation
@@ -25,13 +31,13 @@ For the purposes of these Terms and Conditions:
 
 - **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.
 
-- **Service** refers to the Website.
+- **Service** refers to the Website & our partners.
 
 - **Terms and Conditions** (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement is a Demo.
 
 - **Third-party Social Media Service** means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.
 
-- **Website** refers to AstroWind, accessible from [https://astrowind.vercel.app](https://astrowind.vercel.app)
+- **Website** refers to Calimania, accessible from [https://caliman.org](https://caliman.org)
 
 - **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
 
@@ -119,6 +125,3 @@ If you have any questions about these Terms and Conditions, You can contact us:
 
 - By email: hola[at]caliman.org
 
-## Other Policies
-
-[Anti-Bribery and Anti-Corruption Policy](/policies/bribery)
