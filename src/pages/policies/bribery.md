@@ -5,8 +5,6 @@ layout: '~/layouts/MarkdownLayout.astro'
 
 _Last updated_: June 28, 2024
 
-# Anti-Bribery and Anti-Corruption Policy
-
 **1. Purpose**
 
 Calima (hereinafter referred to as "the Company") is committed to conducting business ethically and with integrity. This Anti-Bribery and Anti-Corruption Policy outlines our stance against bribery and corruption, including prohibitions on providing illegal or improper bribes, kickbacks, payments, gifts, or anything of value to government entities and officials.
