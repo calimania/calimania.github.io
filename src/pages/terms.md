@@ -117,4 +117,8 @@ By continuing to access or use Our Service after those revisions become effectiv
 
 If you have any questions about these Terms and Conditions, You can contact us:
 
-- By email: somecoolemail@domain.com
+- By email: hola[at]caliman.org
+
+## Other Policies
+
+[Anti-Bribery and Anti-Corruption Policy](/policies/bribery)
