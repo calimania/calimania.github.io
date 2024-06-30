@@ -40,6 +40,18 @@ const { language, textDirection } = I18N;
         content={ `0; url=${ redirect }` }
       />
     ) : null}
+    <script type="module">
+      document.addEventListener('DOMContentLoaded', () => {
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer'); // For security
+          }
+        });
+      });
+    </script>
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">
