@@ -12,13 +12,19 @@ metadata:
     default: Club de Ejecutivos Calima
     template: '%s — Calima '
   description: "\U0001F680 Secret Society for Executives."
+  twitter:
+    handle: '@dvidsilva'
+    cardType: summary_large_image
+    card: summary_large_image
+    site: '@dvidsilva'
+    creator: '@dvidsilva'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Calima
+    site_name: Club Calima
     images:
-      - url: '~/assets/images/brooklyn/calima-summit-brooklyn.png'
+      - url: '~/assets/images/posts/2024/wellness.png'
         width: 1200
         height: 630
     type: website
