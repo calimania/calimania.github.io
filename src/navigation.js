@@ -155,6 +155,7 @@ export const footerData = {
       title: 'Company',
       links: [
         { text: 'About', href: '/about' },
+        { text: 'Partnerships', href: '/about/partners' },
         { text: 'Blog', href: '/blog' },
         { text: 'Communities', href: '/communities' },
         { text: 'Code of Conduct', href: '/code-of-conduct' },
