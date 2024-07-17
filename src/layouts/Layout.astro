@@ -9,7 +9,6 @@ import CustomStyles from "~/components/CustomStyles.astro"
 import ApplyColorMode from "~/components/common/ApplyColorMode.astro"
 import Metadata from '~/components/common/Metadata.astro';
 import SiteVerification  from "~/components/common/SiteVerification.astro"
-import Analytics  from "~/components/common/Analytics.astro"
 import BasicScripts from '~/components/common/BasicScripts.astro';
 
 import type { MetaData as MetaDataType } from '~/types';
@@ -33,7 +32,6 @@ const { language, textDirection } = I18N;
     <ApplyColorMode />
     <Metadata {...metadata} />
     <SiteVerification />
-    <Analytics />
     {redirect ? (
       <meta
         http-equiv="refresh"
