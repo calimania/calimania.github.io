@@ -24,9 +24,9 @@ metadata:
   openGraph:
     site_name: Club Calima
     images:
-      - url: '~/assets/images/posts/2024/wellness.png'
-        width: 1200
-        height: 630
+      - url: '~/assets/images/posts/about.jpg'
+        width: 900
+        height: 600
     type: website
 
 i18n:
