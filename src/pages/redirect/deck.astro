@@ -1,0 +1,19 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import type { MetaData } from '~/types';
+
+const metadata = {
+  title: 'Calima EHR Pitch Deck 2024 Q3 - english',
+  openGraph: {
+    images: [{
+      url: '~/assets/images/posts/2024/strategy.png',
+      width: 1200,
+      height: 900,
+    }]
+  }
+} as MetaData;
+
+export const redirect = 'https://docs.google.com/presentation/d/1jqaDbEsr23-beRdlqe4iaw88OlIAFnFDsOTEJCEvzWo/edit#slide=id.p';
+---
+
+<Layout metadata={metadata} redirect={redirect}/>
