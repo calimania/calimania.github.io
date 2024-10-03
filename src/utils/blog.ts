@@ -91,7 +91,10 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
 
 const load = async function (): Promise<Array<Post>> {
   const posts = await getCollection('post');
+  // const strapiPosts = await getCollection('strapiPosts');
+
   const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
+  // const strapiNormalizedPosts = strapiPosts.map(async (post) => await getNormalizedPost(post));
 
   const results = (await Promise.all(normalizedPosts))
     .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())

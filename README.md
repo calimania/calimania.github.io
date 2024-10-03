@@ -11,6 +11,8 @@ Now using Astro 5@beta, to take advantage of the Content Layer and plug-in CMS
 capabilities from the Calima Markket.place content API.
 
 - [Astro 5](https://astro.build/blog/astro-5-beta/)
+- [Calima Markket.place](https://www.markket.place/about/)
+- [Club Calima API](https://api.morirsoniando.com/api/stores/2?populate=articles)
 
 **AstroWind** is a free and open-source template to make your website using **[Astro 3.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/)**. Ready to start a new project and designed taking into account web best practices.
 
