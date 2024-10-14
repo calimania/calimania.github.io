@@ -2,6 +2,13 @@ import { z, defineCollection } from 'astro:content';
 import dayjs from 'dayjs';
 import slug from 'limax';
 
+const ContentSchema: z.ZodType<Content> = z.lazy(() => z.object({
+  type: z.string(),
+  children: z.array(ContentSchema),
+  url: z.string().optional(),
+  text: z.string().optional(),
+}));
+
 const metadataDefinition = () =>
   z
     .object({
@@ -128,22 +135,26 @@ const StrapiPosts = defineCollection({
       const publishDate = article.attributes?.createdAt ? dayjs(article.attributes.createdAt).toDate() : null;
       const updateDate = article.attributes?.updatedAt ? dayjs(article.attributes.updatedAt).toDate() : null;
       const image = article.attributes.cover?.url || article.attributes.SEO.socialImage.data.attributes.url || '';
+      const permalink = `post/${article.id}/${slug(article.attributes.Title)}`;
+      const _slug = slug(article.attributes.Title);
 
-      console.log({ publishDate, updateDate, image });
+      console.log({ _slug, b: article.attributes });
 
       return {
         source: 'api',
         id: `calima-api-${article.id}` as string,
         title: article.attributes.Title,
-        content: article.attributes.Content,
+        content: article.attributes.Content || [],
         excerpt: article.attributes.SEO.metaDescription || '',
         image,
-        category: '',
+        category: 'api',
         author: article.attributes.SEO.metaAuthor || 'Calima API',
         publishDate,
         updateDate,
+        tags: article.attributes.Tags.map((tag) => tag.Label),
         draft: !article.attributes.publishedAt,
-        slug: slug(article.attributes.Title),
+        slug: _slug,
+        permalink,
         metadata: {
           title: article.attributes.SEO.metaTitle || article.attributes.Title,
           description: '',
@@ -162,7 +173,10 @@ const StrapiPosts = defineCollection({
     publishDate: z.date().optional(),
     updateDate: z.date().optional(),
     draft: z.boolean().optional(),
-
+    source: z.string(),
+    slug: z.string(),
+    permalink: z.string(),
+    content: z.array(z.object({})).optional(),
     title: z.string(),
     excerpt: z.string().optional(),
     image: z.string().optional(),
