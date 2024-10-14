@@ -1,5 +1,6 @@
 import { z, defineCollection } from 'astro:content';
 import dayjs from 'dayjs';
+import slug from 'limax';
 
 const metadataDefinition = () =>
   z
@@ -64,6 +65,14 @@ const postCollection = defineCollection({
   }),
 });
 
+type Content = {
+  type: string,
+  children: Content[],
+  url?: string,
+  text?: string,
+  modifier?: string,
+}
+
 type API_Article = {
   id: string,
   attributes: {
@@ -71,47 +80,72 @@ type API_Article = {
     createdAt: string,
     updatedAt: string,
     publishedAt: string,
-    Content: {
-      type: string,
-      children: Record<string, string | object>[],
+    Content: Content[],
+    SEO: {
+      metaTitle: string,
+      metaDescription: string,
+      metaKeywords: string,
+      socialImage: {
+        data: {
+          id: number,
+          attributes: {
+            url: string,
+            width: number,
+            height: number,
+          },
+        }
+      },
+      metaUrl: string,
+      metaAuthor: string,
+    },
+    Tags: {
+      Label: string,
+      Color: string,
     }[],
+    cover: {
+      url: string,
+    },
   }
 };
 
+
+// 4ZK8y6ymSK2NaEu - markket@caliman.org
+// wBdmAXj6umFQDR6 - markket@caliman.org
+
 /**
- * The following collection requests data from an API, we use it to insert additional blog posts from the Calima Markket content API
+ * The following collection requests data from our API, we use it to insert additional blog posts from the Calima Markket content API
+ * https://api.morirsoniando.com/api/stores/2?populate=*
+ * @TODO: Change the URL To point to your STRAPI source
  */
-const remoteCollection = defineCollection({
+const StrapiPosts = defineCollection({
+// https://api.morirsoniando.com/api/stores/2?populate[0]=articles&populate[1]=articles.SEO&populate[2]=SEO
   loader: async () => {
-    const response = await fetch("https://api.morirsoniando.com/api/stores/2?populate=articles");
+    const response = await fetch("https://api.morirsoniando.com/api/stores/2?populate[0]=articles&populate[1]=articles.SEO&populate[2]=articles.Tags&populate[3]=articles.SEO.socialImage");
     const data = await response.json();
-    console.log({ data })
-    // Must return an array of entries with an id property, or an object with IDs as keys and entries as values
-    // data.map((country) => ({
-    //   id: country.cca3,
-    //   ...country,
-    // }));
-    console.log({ articles: data.data?.attributes?.articles?.data, article: data.data?.attributes?.articles?.data[0] })
+
     return (data.data?.attributes?.articles?.data || []).map((article: API_Article) => {
-      console.log({ id: article.id, article });
 
       const publishDate = article.attributes?.createdAt ? dayjs(article.attributes.createdAt).toDate() : null;
       const updateDate = article.attributes?.updatedAt ? dayjs(article.attributes.updatedAt).toDate() : null;
-      // const publishDate = '';
-      // const updateDate = '';
+      const image = article.attributes.cover?.url || article.attributes.SEO.socialImage.data.attributes.url || '';
+
+      console.log({ publishDate, updateDate, image });
 
       return {
+        source: 'api',
         id: `calima-api-${article.id}` as string,
         title: article.attributes.Title,
-        excerpt: '',
-        image: undefined,
+        content: article.attributes.Content,
+        excerpt: article.attributes.SEO.metaDescription || '',
+        image,
         category: '',
-        author: 'Calima API',
+        author: article.attributes.SEO.metaAuthor || 'Calima API',
         publishDate,
         updateDate,
         draft: !article.attributes.publishedAt,
+        slug: slug(article.attributes.Title),
         metadata: {
-          title: article.attributes.Title,
+          title: article.attributes.SEO.metaTitle || article.attributes.Title,
           description: '',
           // openGraph: {
           //   images: [
@@ -142,9 +176,7 @@ const remoteCollection = defineCollection({
 });
 
 
-console.log({ remoteCollection: !!remoteCollection })
-
 export const collections = {
   post: postCollection,
-  // strapiPosts: remoteCollection,
+  strapiPosts: StrapiPosts,
 };

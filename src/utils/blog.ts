@@ -91,12 +91,16 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
 
 const load = async function (): Promise<Array<Post>> {
   const posts = await getCollection('post');
-  // const strapiPosts = await getCollection('strapiPosts');
+  const strapiPosts = await getCollection('strapiPosts');
 
   const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
-  // const strapiNormalizedPosts = strapiPosts.map(async (post) => await getNormalizedPost(post));
+  const strapiNormalizedPosts = strapiPosts.map(async (post) => await getNormalizedPost({ ...post, render: async () => ({ Content: post.Content, headings: [], remarkPluginFrontmatter: { readingTime: 0 } }) }));
+  console.log({ strapiNormalizedPosts });
 
-  const results = (await Promise.all(normalizedPosts))
+
+  const combinedPosts = [...normalizedPosts, ...strapiNormalizedPosts];
+
+  const results = (await Promise.all(combinedPosts))
     .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
     .filter((post) => !post.draft);
 

@@ -3,6 +3,14 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "allowJs": true,
+    "target": "es5",
+    "jsx": "react",
+    "module": "es2015",
+    "esModuleInterop": true,
+    "lib": [
+      "dom",
+      "ES2015"
+    ],
     "baseUrl": ".",
     "paths": {
       "~/*": [
