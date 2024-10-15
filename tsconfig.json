@@ -10,7 +10,7 @@
     "lib": [
       "dom",
       "ES2015",
-      "ES2021"
+      "esnext"
     ],
     "baseUrl": ".",
     "paths": {
