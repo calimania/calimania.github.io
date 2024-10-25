@@ -99,8 +99,6 @@ const StrapiPosts = defineCollection({
       const _slug = slug(article.attributes.Title);
       const content = article.attributes.Content || [];
 
-      console.log('aaaXXX', { _slug, content, });
-
       return {
         source: 'api',
         id: `calima-api-${article.id}` as string,
