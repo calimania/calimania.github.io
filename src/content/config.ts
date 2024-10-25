@@ -1,13 +1,19 @@
-import { z, defineCollection } from 'astro:content';
+import { z, defineCollection, } from 'astro:content';
 import dayjs from 'dayjs';
 import slug from 'limax';
+import type { Content, API_Article } from '~/types.d';
 
-const ContentSchema: z.ZodType<Content> = z.lazy(() => z.object({
+/**
+ * Define the recursive Content schema compatible with the Strapi Calima API
+ */
+const ContentSchema: z.ZodType<Content> = z.object({
   type: z.string(),
-  children: z.array(z.lazy(() => ContentSchema)),
+  children: z.array(z.lazy(() => ContentSchema)).optional(),
   url: z.string().optional(),
   text: z.string().optional(),
-}));
+  bold: z.boolean().optional(),
+})
+
 
 const metadataDefinition = () =>
   z
@@ -54,6 +60,7 @@ const metadataDefinition = () =>
     })
     .optional();
 
+
 const postCollection = defineCollection({
   schema: z.object({
     publishDate: z.date().optional(),
@@ -71,53 +78,6 @@ const postCollection = defineCollection({
     metadata: metadataDefinition(),
   }),
 });
-
-type Content = {
-  type: string,
-  children: Content[],
-  url?: string,
-  text?: string,
-  modifier?: string,
-}
-
-type API_Article = {
-  id: string,
-  attributes: {
-    Title: string,
-    createdAt: string,
-    updatedAt: string,
-    publishedAt: string,
-    Content: Content[],
-    SEO: {
-      metaTitle: string,
-      metaDescription: string,
-      metaKeywords: string,
-      socialImage: {
-        data: {
-          id: number,
-          attributes: {
-            url: string,
-            width: number,
-            height: number,
-          },
-        }
-      },
-      metaUrl: string,
-      metaAuthor: string,
-    },
-    Tags: {
-      Label: string,
-      Color: string,
-    }[],
-    cover: {
-      url: string,
-    },
-  }
-};
-
-
-// 4ZK8y6ymSK2NaEu - markket@caliman.org
-// wBdmAXj6umFQDR6 - markket@caliman.org
 
 /**
  * The following collection requests data from our API, we use it to insert additional blog posts from the Calima Markket content API
@@ -137,14 +97,15 @@ const StrapiPosts = defineCollection({
       const image = article.attributes.cover?.url || article.attributes.SEO.socialImage.data.attributes.url || '';
       const permalink = `post/${article.id}/${slug(article.attributes.Title)}`;
       const _slug = slug(article.attributes.Title);
+      const content = article.attributes.Content || [];
 
-      console.log({ _slug, b: article.attributes });
+      console.log('aaaXXX', { _slug, content, });
 
       return {
         source: 'api',
         id: `calima-api-${article.id}` as string,
         title: article.attributes.Title,
-        content: article.attributes.Content || [],
+        content,
         excerpt: article.attributes.SEO.metaDescription || '',
         image,
         category: 'api',
@@ -176,7 +137,7 @@ const StrapiPosts = defineCollection({
     source: z.string(),
     slug: z.string(),
     permalink: z.string(),
-    content: z.array(z.object({})).optional(),
+    content: z.array(ContentSchema),
     title: z.string(),
     excerpt: z.string().optional(),
     image: z.string().optional(),

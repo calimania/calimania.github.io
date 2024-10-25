@@ -46,12 +46,8 @@ const generatePermalink = async ({
 };
 
 const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> => {
-  const { id, slug: rawSlug = '', data } = post;
+  const { id, slug: rawSlug = '', data, } = post;
   const { Content, remarkPluginFrontmatter } = await post.render();
-
-  if (id.startsWith('calima-api')) {
-    console.log({ data, rawSlug: post.slug, post, Content })
-  }
 
   const {
     publishDate: rawPublishDate = new Date(),
@@ -72,27 +68,31 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
   const category = rawCategory ? cleanSlug(rawCategory) : undefined;
   const tags = rawTags.map((tag: string) => cleanSlug(tag));
 
+  const content = 'content' in post.data ? (post.data.content as { type: string }[] || []) : [];
+
   return {
-    id: id,
-    slug: slug,
+    id,
+    slug,
     permalink: await generatePermalink({ id, slug, publishDate, category }) || '',
 
-    publishDate: publishDate,
-    updateDate: updateDate,
+    publishDate,
+    updateDate,
 
-    title: title,
-    excerpt: excerpt,
-    image: image,
+    title,
+    excerpt,
+    image,
 
-    category: category,
-    tags: tags,
-    author: author,
+    category,
+    tags,
+    author,
 
-    draft: draft,
+    draft,
 
     metadata,
 
-    Content: Content || post.content,
+    Content,
+
+    content,
     // or 'content' in case you consume from API
 
     readingTime: remarkPluginFrontmatter?.readingTime || '3min',
@@ -106,7 +106,11 @@ const load = async function (): Promise<Array<Post>> {
   const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
   const strapiNormalizedPosts = strapiPosts.map(async (post) => await getNormalizedPost({
     ...post,
-    render: async () => ({ Content: post.Content, headings: [], remarkPluginFrontmatter: { readingTime: 0 } })
+    render: async () => ({
+      Content: post.Content,
+      headings: [],
+      remarkPluginFrontmatter: { readingTime: 0 }
+    })
   }));
 
   const combinedPosts = [...normalizedPosts, ...strapiNormalizedPosts];
