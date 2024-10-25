@@ -3,9 +3,9 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "allowJs": true,
-    "target": "es5",
+    "target": "esnext",
     "jsx": "react",
-    "module": "es2015",
+    "module": "esnext",
     "esModuleInterop": true,
     "lib": [
       "dom",

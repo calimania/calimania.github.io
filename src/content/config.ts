@@ -4,7 +4,7 @@ import slug from 'limax';
 
 const ContentSchema: z.ZodType<Content> = z.lazy(() => z.object({
   type: z.string(),
-  children: z.array(ContentSchema),
+  children: z.array(z.lazy(() => ContentSchema)),
   url: z.string().optional(),
   text: z.string().optional(),
 }));
