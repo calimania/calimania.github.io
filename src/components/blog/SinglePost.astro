@@ -6,6 +6,8 @@ import PostTags from '~/components/blog/Tags.astro';
 import SocialShare from '~/components/common/SocialShare.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
+import RenderContent from '~/utils/renderContent';
+
 import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate } from '~/utils/utils';
 
@@ -17,7 +19,7 @@ export interface Props {
 }
 
 const { post, url } = Astro.props;
-const { Content } = post;
+const { Content , id } = post;
 ---
 
 <section class="py-8 sm:py-16 lg:py-20 mx-auto">
@@ -75,13 +77,17 @@ const { Content } = post;
     <div
       class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px]"
     >
-      {
+      {id.startsWith('calima-api') ? (
+        <>
+          <RenderContent post={post} />
+        </>
+      ):(
         Content ? (
           <Content />
         ) : (
           <Fragment set:html={post.content || ""} />
         )
-      }
+      )}
     </div>
     <div>
       <!-- HighlightedPosts Widget ******* -->

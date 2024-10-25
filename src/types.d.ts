@@ -1,6 +1,50 @@
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 import type { HTMLAttributes } from 'astro/types';
 
+
+export interface Content {
+  type: string,
+  children?: Content[],
+  url?: string,
+  text?: string,
+  modifier?: string,
+}
+
+export interface API_Article {
+  id: string,
+  attributes: {
+    Title: string,
+    createdAt: string,
+    updatedAt: string,
+    publishedAt: string,
+    Content: Content[],
+    SEO: {
+      metaTitle: string,
+      metaDescription: string,
+      metaKeywords: string,
+      socialImage: {
+        data: {
+          id: number,
+          attributes: {
+            url: string,
+            width: number,
+            height: number,
+          },
+        }
+      },
+      metaUrl: string,
+      metaAuthor: string,
+    },
+    Tags: {
+      Label: string,
+      Color: string,
+    }[],
+    cover: {
+      url: string,
+    },
+  }
+}
+
 export interface Post {
   /** A unique ID number that identifies a post. */
   id: string;
@@ -38,7 +82,10 @@ export interface Post {
 
   /**  */
   Content?: AstroComponentFactory;
-  content?: string;
+
+  content?: Array<{
+    type: string,
+  }>;
 
   /**  */
   readingTime?: number;

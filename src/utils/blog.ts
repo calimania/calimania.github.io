@@ -22,7 +22,9 @@ const generatePermalink = async ({
   const minute = String(publishDate.getMinutes()).padStart(2, '0');
   const second = String(publishDate.getSeconds()).padStart(2, '0');
 
-  const permalink = POST_PERMALINK_PATTERN.replace('%slug%', slug)
+  const _slug = id.startsWith('calima-api') ? `${id}/${slug}` : slug;
+
+  const permalink = POST_PERMALINK_PATTERN.replace('%slug%', _slug)
     .replace('%id%', id)
     .replace('%category%', category || '')
     .replace('%year%', year)
@@ -32,6 +34,10 @@ const generatePermalink = async ({
     .replace('%minute%', minute)
     .replace('%second%', second);
 
+  if (id.startsWith('calima-api')) {
+    console.log({ id, slug, permalink, POST_PERMALINK_PATTERN, publishDate, category })
+  }
+
   return permalink
     .split('/')
     .map((el) => trimSlash(el))
@@ -40,7 +46,7 @@ const generatePermalink = async ({
 };
 
 const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> => {
-  const { id, slug: rawSlug = '', data } = post;
+  const { id, slug: rawSlug = '', data, } = post;
   const { Content, remarkPluginFrontmatter } = await post.render();
 
   const {
@@ -56,44 +62,60 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     metadata = {},
   } = data;
 
-  const slug = cleanSlug(rawSlug); // cleanSlug(rawSlug.split('/').pop());
+  const slug = cleanSlug(rawSlug || post.slug || data.title); // cleanSlug(rawSlug.split('/').pop());
   const publishDate = new Date(rawPublishDate);
   const updateDate = rawUpdateDate ? new Date(rawUpdateDate) : undefined;
   const category = rawCategory ? cleanSlug(rawCategory) : undefined;
   const tags = rawTags.map((tag: string) => cleanSlug(tag));
 
+  const content = 'content' in post.data ? (post.data.content as { type: string }[] || []) : [];
+
   return {
-    id: id,
-    slug: slug,
-    permalink: await generatePermalink({ id, slug, publishDate, category }),
+    id,
+    slug,
+    permalink: await generatePermalink({ id, slug, publishDate, category }) || '',
 
-    publishDate: publishDate,
-    updateDate: updateDate,
+    publishDate,
+    updateDate,
 
-    title: title,
-    excerpt: excerpt,
-    image: image,
+    title,
+    excerpt,
+    image,
 
-    category: category,
-    tags: tags,
-    author: author,
+    category,
+    tags,
+    author,
 
-    draft: draft,
+    draft,
 
     metadata,
 
-    Content: Content,
+    Content,
+
+    content,
     // or 'content' in case you consume from API
 
-    readingTime: remarkPluginFrontmatter?.readingTime,
+    readingTime: remarkPluginFrontmatter?.readingTime || '3min',
   };
 };
 
 const load = async function (): Promise<Array<Post>> {
   const posts = await getCollection('post');
-  const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
+  const strapiPosts = await getCollection('strapiPosts');
 
-  const results = (await Promise.all(normalizedPosts))
+  const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
+  const strapiNormalizedPosts = strapiPosts.map(async (post) => await getNormalizedPost({
+    ...post,
+    render: async () => ({
+      Content: post.Content,
+      headings: [],
+      remarkPluginFrontmatter: { readingTime: 0 }
+    })
+  }));
+
+  const combinedPosts = [...normalizedPosts, ...strapiNormalizedPosts];
+
+  const results = (await Promise.all(combinedPosts))
     .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
     .filter((post) => !post.draft);
 

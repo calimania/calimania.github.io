@@ -3,6 +3,15 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "allowJs": true,
+    "target": "esnext",
+    "jsx": "react",
+    "module": "esnext",
+    "esModuleInterop": true,
+    "lib": [
+      "dom",
+      "ES2015",
+      "esnext"
+    ],
     "baseUrl": ".",
     "paths": {
       "~/*": [
