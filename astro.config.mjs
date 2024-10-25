@@ -10,6 +10,8 @@ import partytown from '@astrojs/partytown';
 import compress from 'astro-compress';
 import icon from 'astro-icon';
 import tasks from './src/utils/tasks';
+import react from '@astrojs/react';
+
 
 import { readingTimeRemarkPlugin } from './src/utils/frontmatter.mjs';
 
@@ -32,6 +34,7 @@ export default defineConfig({
   output: 'static',
 
   integrations: [
+    react(),
     tailwind({
       applyBaseStyles: false,
     }),
