@@ -12,7 +12,6 @@ export interface Content {
 
 export interface API_Article {
   id: string,
-  attributes: {
     Title: string,
     createdAt: string,
     updatedAt: string,
@@ -23,14 +22,13 @@ export interface API_Article {
       metaDescription: string,
       metaKeywords: string,
       socialImage: {
-        data: {
-          id: number,
-          attributes: {
-            url: string,
-            width: number,
-            height: number,
-          },
-        }
+        id: number,
+        attributes: {
+          url: string,
+          width: number,
+          height: number,
+        },
+        url,
       },
       metaUrl: string,
       metaAuthor: string,
@@ -42,7 +40,6 @@ export interface API_Article {
     cover: {
       url: string,
     },
-  }
 }
 
 export interface Post {

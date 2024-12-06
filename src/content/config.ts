@@ -87,35 +87,38 @@ const postCollection = defineCollection({
 const StrapiPosts = defineCollection({
 // https://api.morirsoniando.com/api/stores/2?populate[0]=articles&populate[1]=articles.SEO&populate[2]=SEO
   loader: async () => {
-    const response = await fetch("https://api.morirsoniando.com/api/stores/2?populate[0]=articles&populate[1]=articles.SEO&populate[2]=articles.Tags&populate[3]=articles.SEO.socialImage");
+    const response = await fetch("https://api.markket.place/api/articles?populate=*");
     const data = await response.json();
 
-    return (data.data?.attributes?.articles?.data || []).map((article: API_Article) => {
+    console.log({ x: data.data });
 
-      const publishDate = article.attributes?.createdAt ? dayjs(article.attributes.createdAt).toDate() : null;
-      const updateDate = article.attributes?.updatedAt ? dayjs(article.attributes.updatedAt).toDate() : null;
-      const image = article.attributes.cover?.url || article.attributes.SEO.socialImage.data.attributes.url || '';
-      const permalink = `post/${article.id}/${slug(article.attributes.Title)}`;
-      const _slug = slug(article.attributes.Title);
-      const content = article.attributes.Content || [];
+    return (data?.data || [])
+      .filter((article: API_Article) => article?.store.id == 2)
+      .map((article: API_Article) => {
+        const publishDate = article.createdAt ? dayjs(article.createdAt).toDate() : null;
+        const updateDate = article.updatedAt ? dayjs(article.updatedAt).toDate() : null;
+        const image = article.cover?.url || article.SEO?.socialImage?.url || '';
+        const permalink = `post/${article.id}/${slug(article?.Title)}`;
+        const _slug = slug(article.Title);
+        const content = article.Content || [];
 
       return {
         source: 'api',
         id: `calima-api-${article.id}` as string,
-        title: article.attributes.Title,
+        title: article.Title,
         content,
-        excerpt: article.attributes.SEO.metaDescription || '',
+        excerpt: article.SEO.metaDescription || '',
         image,
         category: 'api',
-        author: article.attributes.SEO.metaAuthor || 'Calima API',
+        author: article.SEO.metaAuthor || 'Calima API',
         publishDate,
         updateDate,
-        tags: article.attributes.Tags.map((tag) => tag.Label),
-        draft: !article.attributes.publishedAt,
+        tags: article.Tags.map((tag) => tag.Label),
+        draft: !article.publishedAt,
         slug: _slug,
         permalink,
         metadata: {
-          title: article.attributes.SEO.metaTitle || article.attributes.Title,
+          title: article.SEO.metaTitle || article.Title,
           description: '',
           // openGraph: {
           //   images: [
