@@ -34,10 +34,6 @@ const generatePermalink = async ({
     .replace('%minute%', minute)
     .replace('%second%', second);
 
-  if (id.startsWith('calima-api')) {
-    console.log({ id, slug, permalink, POST_PERMALINK_PATTERN, publishDate, category })
-  }
-
   return permalink
     .split('/')
     .map((el) => trimSlash(el))
