@@ -1,7 +1,9 @@
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 import type { HTMLAttributes } from 'astro/types';
 
-
+/**
+ * Content type compatible with the Strapi Calima API article body
+ */
 export interface Content {
   type: string,
   children?: Content[],
@@ -10,7 +12,14 @@ export interface Content {
   modifier?: string,
 }
 
+/**
+ * Article schema compatible with the Strapi Calima API
+ */
 export interface API_Article {
+  /**
+   * store foreign key
+   */
+  store?: string;
   id: string,
     Title: string,
     createdAt: string,

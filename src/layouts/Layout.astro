@@ -50,6 +50,18 @@ const { language, textDirection } = I18N;
         });
       });
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F0YG7DJT9G"></script>
+    <script>
+      // Global site tag (gtag.js) - Google Analytics
+      // @ts-expect-error
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){
+        // @ts-expect-error
+        window.dataLayer.push(arguments);
+      }
+      // @ts-expect-error
+      gtag('js', new Date()); gtag('config', 'G-F0YG7DJT9G');
+    </script>
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">
