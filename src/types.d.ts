@@ -12,34 +12,37 @@ export interface Content {
 
 export interface API_Article {
   id: string,
-    Title: string,
-    createdAt: string,
-    updatedAt: string,
-    publishedAt: string,
-    Content: Content[],
-    SEO: {
-      metaTitle: string,
-      metaDescription: string,
-      metaKeywords: string,
-      socialImage: {
-        id: number,
-        attributes: {
-          url: string,
-          width: number,
-          height: number,
-        },
-        url,
+  Title: string,
+  createdAt: string,
+  updatedAt: string,
+  publishedAt: string,
+  Content: Content[],
+  store: {
+    id: number,
+  },
+  SEO: {
+    metaTitle: string,
+    metaDescription: string,
+    metaKeywords: string,
+    socialImage: {
+      id: number,
+      attributes: {
+        url: string,
+        width: number,
+        height: number,
       },
-      metaUrl: string,
-      metaAuthor: string,
+      url,
     },
-    Tags: {
-      Label: string,
-      Color: string,
-    }[],
-    cover: {
-      url: string,
-    },
+    metaUrl: string,
+    metaAuthor: string,
+  },
+  Tags: {
+    Label: string,
+    Color: string,
+  }[],
+  cover: {
+    url: string,
+  },
 }
 
 export interface Post {
