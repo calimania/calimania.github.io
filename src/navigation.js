@@ -176,8 +176,9 @@ export const footerData = {
     {
       title: 'Services & Projects',
       links: [
-        { text: 'Xcelerator Business summit', href: '/2024/xcelerator/' },
-        { text: 'Startup Weekend Latinx 2024', href: '/2024/startup-weekend-hhm' },
+        // { text: 'Xcelerator Business summit', href: '/2024/xcelerator/' },
+        // { text: 'Startup Weekend Latinx 2024', href: '/2024/startup-weekend-hhm' },
+        { text: 'Club Calima Community Summit 2025', href: '/calima-api-76/calima-summit-brooklyn-2025-nyc-tech-week-a16z' },
         { text: 'Club San Fernando NYS', href: '/san_fernando_notion' },
         { text: 'Fractional Executives', href: '/2024/fractional-executives' },
         { text: 'The Germinator Colombia', href: '/redirect/germinator' },
@@ -187,6 +188,7 @@ export const footerData = {
       title: 'Locations',
       links: [
         { text: 'Cali', href: '/cali' },
+        { text: 'Cohoes', href: '/cohoes' },
         { text: 'Troy', href: '/troy' },
         { text: 'Jersey City', href: '/jersey-city' },
         { text: 'Brooklyn', href: '/brooklyn' }

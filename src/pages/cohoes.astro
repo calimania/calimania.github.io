@@ -1,0 +1,79 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Cohoes & Troy, usptate New York',
+};
+---
+<style>
+  strong { color: #ff00ff; }
+  h1, h2, h3 {
+    color: #0157ad!important;
+  }
+</style>
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Club Calima  Upstate New York"
+    image={{
+      src: '~/assets/images/posts/cohoes-troy.png',
+      alt: 'Cohoes & Troy, usptate New York',
+    }}
+  >
+    <Fragment slot="title">
+      Cohoes & Troy
+  </Fragment>
+
+    <Fragment slot="subtitle">
+      historic Hudson Valley
+    </Fragment>
+  </Hero>
+  <div class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted  text-justify">
+    <h2 class="py-8 dark:text-white text-3xl font-heading">
+      Hudson Valley
+    </h2>
+    <p>
+      Welcome to our home in the historic Hudson Valley, where old-world charm
+      meets a thriving community of creatives, entrepreneurs, and dreamers.
+      <br>
+      <br>
+      Nestled between the picturesque waterfalls of Cohoes and the bustling,
+      art-filled streets of Troy, our upstate New York hub embodies the spirit
+      of innovation and collaboration that defines Calima.
+      <br>
+      <br>
+
+      <strong class="text-magenta">Why Upstate?</strong>
+      <br>
+      There's something magical about this region—lush greenery, a deep sense of
+      history, and a community of thinkers and builders who are redefining what
+      it means to grow together.
+      <br>
+      Cohoes and Troy are at the heart of it all,
+      offering the perfect mix of tranquility for focus and the vibrant energy
+      of small-city life to spark big ideas.
+    </p>
+    <h2 class="py-8 dark:text-white text-3xl font-heading">
+      What We’re Building
+    </h2>
+    <p>
+    From here, we’re shaping the future of startups, sustainability, and community empowerment:
+    <br>
+    <br>
+    <strong>Co-Working & Creativity: </strong>
+    Join us in one of our flexible spaces, designed for collaboration, workshops, and head-down productivity.
+    <br>
+    <strong>Leadership Retreats: </strong>Step back, realign, and strategize for what’s next in a serene and inspiring environment.
+    <br>
+    <strong>Local Impact: </strong>Partner with us to support conservation, local artists, and the development of impactful small businesses.
+    <br>
+    <strong>Events & Gatherings:</strong> Upstate New York offers the perfect backdrop for intimate gatherings, summits, and unforgettable moments. Keep an eye out for upcoming events where you can connect with other leaders and creators in the Calima community.
+    <br>
+    </p>
+    <h2 class="py-8 dark:text-white text-3xl font-heading">
+      Welcome to Calima, Upstate Edition.
+    </h2>
+    <p><strong>Los derechos del hombre priman sobre las jerarquias impuestas</strong></p>
+  </div>
+</Layout>
