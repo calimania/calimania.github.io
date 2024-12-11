@@ -90,8 +90,6 @@ const StrapiPosts = defineCollection({
     const response = await fetch("https://api.markket.place/api/articles?populate=*");
     const data = await response.json();
 
-    console.log({ x: data.data });
-
     return (data?.data || [])
       .filter((article: API_Article) => article?.store.id == 2)
       .map((article: API_Article) => {
