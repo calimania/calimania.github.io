@@ -91,7 +91,7 @@ const StrapiPosts = defineCollection({
     const data = await response.json();
 
     return (data?.data || [])
-      .filter((article: API_Article) => article?.store.id == 2)
+      .filter((article: API_Article) => article?.store?.id == 2)
       .map((article: API_Article) => {
         const publishDate = article.createdAt ? dayjs(article.createdAt).toDate() : null;
         const updateDate = article.updatedAt ? dayjs(article.updatedAt).toDate() : null;
@@ -102,7 +102,7 @@ const StrapiPosts = defineCollection({
 
       return {
         source: 'api',
-        id: `calima-api-${article.id}` as string,
+        id: `calima-api-${article?.id}` as string,
         title: article.Title,
         content,
         excerpt: article.SEO.metaDescription || '',
