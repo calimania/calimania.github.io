@@ -1,0 +1,93 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Chi-town, Illinois',
+};
+---
+<style>
+  strong { color: #ff00ff; }
+  h1, h2, h3 {
+    color: #0157ad!important;
+  }
+</style>
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Innovation Hub"
+    image={{
+      src: '~/assets/images/posts/2024/chicago.png',
+      alt: 'Chi-town',
+    }}
+  >
+    <Fragment slot="title">
+      Chicago
+  </Fragment>
+
+    <Fragment slot="subtitle">
+      is like going out of the world.
+    </Fragment>
+  </Hero>
+  <div class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted  text-justify">
+    <h2 class="py-8 dark:text-white text-3xl font-heading">
+      Great lakes
+    </h2>
+    <p>
+      Chicago has seen innovation in music, governance, startups, health and community
+    </p>
+    <p>
+      Federal, state and local incentives
+<br>
+      EDGE, the Economic Development for a Growing Economy, is a tax credit
+      incentive program designed to encourage startups to invest, create, and
+      retain talent
+    </p>
+    <h2 class="py-8 dark:text-white text-3xl font-heading">
+      What We’re Building
+    </h2>
+    <p>
+      Connecting with key players from Chicago’s tech & startup ecosystem to
+      envision and build a shared future
+    <br>
+    <br>
+    <strong>Co-Working & Creativity: </strong>
+      Flexible spaces, with daily passes, memberships and office space.
+    <br>
+    <strong>Startup accelerator:</strong> mentorship programs, empowering underrepresented founders
+    <br>
+    <strong>Innovation labs:</strong> intentional spaces
+    <br>
+    <strong>Leadership Retreats:</strong> thriving hospitality industry
+    <br>
+    <strong>Local Impact:</strong> civic engagement, community development
+    <br>
+    <strong>Events & Gatherings:</strong> networking, summits & raves
+    <br>
+    </p>
+
+    <h2 class="py-8 dark:text-white text-3xl font-heading">
+      1871
+      </h2>
+    <p>
+      1871 is a community of technology-focused startups and entrepreneurs
+      working together to shape the future of Chicago’s economy
+      </p>
+      <p>
+        <a href="https://1871.com/" target="_blank">1871 Homepage</a>
+      </p>
+    <h2 class="py-8 dark:text-white text-3xl font-heading">
+      Built in Chicago
+    </h2>
+    <p><strong>Chicago tech jobs</strong> & startup database</p>
+    <p>
+      <a href="https://www.builtinchicago.org/" target="_blank">builtinchicago.org</a>
+    </p>
+    <br>
+    <p>
+      <a href="https://www.builtinchicago.org/articles/companies-downtown-chicago" target="_blank">
+      84 companies in downtown Chicago you should know
+    </a>
+    </p>
+  </div>
+</Layout>
