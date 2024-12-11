@@ -179,7 +179,7 @@ export const footerData = {
         // { text: 'Xcelerator Business summit', href: '/2024/xcelerator/' },
         // { text: 'Startup Weekend Latinx 2024', href: '/2024/startup-weekend-hhm' },
         { text: 'Markket.place', href: '/2024/markketplace' },
-        { text: 'Sanar EHR', href: '/2024/ehr' },
+        { text: 'Sanar EHR', href: '/2024/calima-ehr' },
         { text: 'Club Calima Community Summit 2025', href: '/calima-api-76/calima-summit-brooklyn-2025-nyc-tech-week-a16z' },
         { text: 'Club San Fernando NYS', href: '/san_fernando_notion' },
         { text: 'Fractional Executives', href: '/2024/fractional-executives' },
