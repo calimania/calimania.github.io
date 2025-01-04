@@ -24,6 +24,7 @@ export interface API_Article {
     metaTitle: string,
     metaDescription: string,
     metaKeywords: string,
+    metaDate: string,
     socialImage: {
       id: number,
       attributes: {
