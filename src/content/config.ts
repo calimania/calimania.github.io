@@ -93,16 +93,26 @@ const StrapiPosts = defineCollection({
     return (data?.data || [])
       .filter((article: API_Article) => article?.store?.id == 2)
       .map((article: API_Article) => {
-        const publishDate = article.createdAt ? dayjs(article.createdAt).toDate() : null;
+        let publishDate = article.createdAt ? dayjs(article.createdAt).toDate() : null;
+        if (article.SEO?.metaDate) {
+          publishDate = dayjs(article.SEO.metaDate).toDate();
+        }
+
         const updateDate = article.updatedAt ? dayjs(article.updatedAt).toDate() : null;
         const image = article.cover?.url || article.SEO?.socialImage?.url || '';
-        const permalink = `post/${article.id}/${slug(article?.Title)}`;
-        const _slug = slug(article.Title);
+
+        let permalink = `post/${article.id}/${slug(article?.Title)}`;
+
+        if (article.SEO?.metaUrl) {
+          permalink = article.SEO.metaUrl;
+        }
+
+        const _slug = slug(article.SEO?.metaUrl || article.Title);
         const content = article.Content || [];
 
       return {
         source: 'api',
-        id: `calima-api-${article?.id}` as string,
+        id: `markket-api-${article?.id}` as string,
         title: article.Title,
         content,
         excerpt: article.SEO.metaDescription || '',

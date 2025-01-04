@@ -22,7 +22,7 @@ const generatePermalink = async ({
   const minute = String(publishDate.getMinutes()).padStart(2, '0');
   const second = String(publishDate.getSeconds()).padStart(2, '0');
 
-  const _slug = id.startsWith('calima-api') ? `${id}/${slug}` : slug;
+  const _slug = id.startsWith('markket-api') ? `${year}/${slug}` : slug;
 
   const permalink = POST_PERMALINK_PATTERN.replace('%slug%', _slug)
     .replace('%id%', id)

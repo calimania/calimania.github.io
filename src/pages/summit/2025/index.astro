@@ -1,0 +1,204 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+// import FAQs from '~/components/widgets/FAQs.astro';
+// import Steps from '~/components/widgets/Steps.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Calima Summit - Soho, Jun 4 & 5 2025',
+  image: 'https://markketplace.nyc3.digitaloceanspaces.com/uploads/aa20f3b9950580db00c9dce1ba72a3e1.png'
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero image={{ src: 'https://markketplace.nyc3.digitaloceanspaces.com/uploads/aa20f3b9950580db00c9dce1ba72a3e1.png', alt: 'Mision Comercial Calima, Brooklyn, June 2025' }}>
+    <Fragment slot="title">
+       Calima Summit<br/>
+        <small class="font-semibold">Pónele ritmo a tu negocio.</small>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Club Calima is connecting Pan American business leaders to advance disruptive collaboration opportunities
+    </Fragment>
+  </Hero>
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Participate in our business community"
+    subtitle="Discover the world of magical realism in the business world."
+    columns={2}
+    items={[
+      {
+        title: '2 days of content',
+        description: 'Panels, speakers, workshops and office hours ',
+        icon: 'tabler:stairs',
+      },
+      {
+        title: 'Networking opportunities',
+        description: 'Multiple activities and activations',
+        icon: 'tabler:flip-vertical',
+      },
+      {
+        title: 'Celebrate Latin American culture',
+        description: 'Snacks, music and performance by friends from the community.',
+        icon: 'tabler:shield-lock',
+      },
+      {
+        title: 'Unique opportunity',
+        description: `Participants from a variety of industries.`,
+        icon: 'tabler:accessible',
+      },
+      {
+        title: 'Beautiful location',
+        description: 'SOHO, Manhattan',
+        icon: 'tabler:chevrons-up',
+      },
+      {
+        title: 'NYC Tech Week',
+        description: 'Additional events and international visitors',
+        icon: 'tabler:headset',
+      },
+    ]}
+    classes={{ container: 'max-w-5xl' }}
+  />
+
+  <Content
+  isReversed
+  tagline="Bienvenido a Niuyor"
+  title="June 4 & 5  2025"
+  ></Content>
+
+
+  <!-- FAQs Widget ******************* -->
+
+  <!-- <FAQs
+    title="Pricing FAQs"
+    subtitle="Choosing the right plan is important, and we're here to answer your questions. If you have queries about our pricing options, you're in the right place."
+    columns={1}
+    items={[
+      {
+        title: 'Do the plans come with customer support?',
+        description:
+          'Absolutely, all plans include access to our dedicated customer support to assist you with any queries or concerns.',
+      },
+      {
+        title: 'Is there a trial period for the different plans?',
+        description:
+          "Unfortunately, we don't offer trial periods for the plans. However, you can check out our demo section to preview the quality of our templates.",
+      },
+      {
+        title: 'Can I switch between plans?',
+        description:
+          'Certainly! You can easily upgrade or downgrade your plan, at any time, to find the one that best suits your evolving requirements.',
+      },
+      {
+        title: 'What payment methods do you accept?',
+        description:
+          'We accept major credit cards and online payment methods to ensure a convenient and secure transaction process.',
+      },
+      {
+        title: 'Are there any hidden fees beyond the displayed cost?',
+        description:
+          'No, the subscription cost covers all the features and templates listed under each plan. There are no hidden fees or extra charges.',
+      },
+    ]}
+  /> -->
+
+
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Pa'delante siempre"
+    subtitle="More information coming up soon"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Join our slack',
+        href: '/2024/slack',
+      },
+    ]}
+  />
+
+
+  <Content
+    tagline="Community Partners"
+    title="Thanks to our friends and supporters for making this happen"
+    items={[
+      {
+        title: 'Calima',
+        description: 'Community for latinx executives and business leaders',
+      },
+      {
+        title: 'Innpulsa Colombia',
+        description: 'Entrepreneurship and innovation agency of the National Government',
+      },
+      {
+        title: 'Sikuani',
+        description: 'Leading community to promote collaboration in the tech ecosystem'
+      },
+      {
+        title: 'Negozee',
+        description: 'Business community for spanish speakers in the US'
+      },
+      {
+        title: 'AWS for startups',
+        description: 'Community by AWS to support founders using their platform'
+      },
+      {
+        title: "SHPE NYC",
+        description: 'Largest association dedicated to fostering Hispanic leadership in the STEM field'
+      }
+    ]}
+    image={{
+      src: '~/assets/images/brooklyn/brooklyn-summit-calima-sponsors.png',
+      alt: 'Calima summit community partners',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Brooklyn</h3>
+      Culture, Commerce, Community
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+<!--
+  <CallToAction
+    title="Learn More"
+    subtitle="Read the announcement in our blog and learn more about the event"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Announcement (EN)',
+        href: 'https://caliman.org/calima-summit/',
+      },
+      {
+        variant: 'primary',
+        text: 'Anuncio (ES)',
+        href: 'https://caliman.org/calima-summit-es/',
+      },
+    ]}
+  /> -->
+
+
+
+  <CallToAction
+    title="Community partnerships and sponsor"
+    subtitle="Learn more about opportunities to ensure the success of the event"
+    actions={[
+      // {
+      //   variant: 'secondary',
+      //   text: 'Learn more',
+      //   href: '/summit/2024/sponsor',
+      // },
+    ]}
+  />
+</Layout>
+
+
