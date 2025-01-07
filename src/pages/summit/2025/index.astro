@@ -1,8 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
-// import FAQs from '~/components/widgets/FAQs.astro';
-// import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
@@ -14,21 +13,21 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero image={{ src: 'https://markketplace.nyc3.digitaloceanspaces.com/uploads/aa20f3b9950580db00c9dce1ba72a3e1.png', alt: 'Mision Comercial Calima, Brooklyn, June 2025' }}>
+  <Hero image={{ src: 'https://markketplace.nyc3.digitaloceanspaces.com/uploads/eba441f351a5c279f7abdcd5205c7f4d.png', alt: 'Mision Comercial Calima, SOHO, June 2025' }}>
     <Fragment slot="title">
        Calima Summit<br/>
-        <small class="font-semibold">Pónele ritmo a tu negocio.</small>
+        <small class="font-semibold">Pónele ritmo a tu negocio</small>
     </Fragment>
     <Fragment slot="subtitle">
-      Club Calima is connecting Pan American business leaders to advance disruptive collaboration opportunities
+      connecting Pan American business leaders with local NYC artists
     </Fragment>
   </Hero>
 
   <!-- Features3 Widget ************** -->
 
   <Features3
-    title="Participate in our business community"
-    subtitle="Discover the world of magical realism in the business world."
+    title="Bienvenido a Niuyol"
+    subtitle="June 4 & 5, 2025"
     columns={2}
     items={[
       {
@@ -43,12 +42,12 @@ const metadata = {
       },
       {
         title: 'Celebrate Latin American culture',
-        description: 'Snacks, music and performance by friends from the community.',
+        description: 'Snacks, music and performance by friends from the community',
         icon: 'tabler:shield-lock',
       },
       {
-        title: 'Unique opportunity',
-        description: `Participants from a variety of industries.`,
+        title: 'International visitors',
+        description: `Meet eager new collaborators and friends`,
         icon: 'tabler:accessible',
       },
       {
@@ -57,146 +56,148 @@ const metadata = {
         icon: 'tabler:chevrons-up',
       },
       {
-        title: 'NYC Tech Week',
-        description: 'Additional events and international visitors',
+        title: 'Early stage accelerator',
+        description: 'Join a cohort of founders & grow together',
         icon: 'tabler:headset',
       },
     ]}
     classes={{ container: 'max-w-5xl' }}
   />
 
-  <Content
-  isReversed
-  tagline="Bienvenido a Niuyor"
-  title="June 4 & 5  2025"
-  ></Content>
-
-
-  <!-- FAQs Widget ******************* -->
-
-  <!-- <FAQs
-    title="Pricing FAQs"
-    subtitle="Choosing the right plan is important, and we're here to answer your questions. If you have queries about our pricing options, you're in the right place."
-    columns={1}
-    items={[
-      {
-        title: 'Do the plans come with customer support?',
-        description:
-          'Absolutely, all plans include access to our dedicated customer support to assist you with any queries or concerns.',
-      },
-      {
-        title: 'Is there a trial period for the different plans?',
-        description:
-          "Unfortunately, we don't offer trial periods for the plans. However, you can check out our demo section to preview the quality of our templates.",
-      },
-      {
-        title: 'Can I switch between plans?',
-        description:
-          'Certainly! You can easily upgrade or downgrade your plan, at any time, to find the one that best suits your evolving requirements.',
-      },
-      {
-        title: 'What payment methods do you accept?',
-        description:
-          'We accept major credit cards and online payment methods to ensure a convenient and secure transaction process.',
-      },
-      {
-        title: 'Are there any hidden fees beyond the displayed cost?',
-        description:
-          'No, the subscription cost covers all the features and templates listed under each plan. There are no hidden fees or extra charges.',
-      },
-    ]}
-  /> -->
-
-
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    title="Pa'delante siempre"
-    subtitle="More information coming up soon"
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Join our slack',
-        href: '/2024/slack',
-      },
-    ]}
-  />
-
 
   <Content
     tagline="Community Partners"
-    title="Thanks to our friends and supporters for making this happen"
+    title="Past & Current Sponsors"
     items={[
       {
         title: 'Calima',
         description: 'Community for latinx executives and business leaders',
       },
       {
-        title: 'Innpulsa Colombia',
-        description: 'Entrepreneurship and innovation agency of the National Government',
+        title: 'Moonzecope',
+        description: 'Award winnings Production company'
       },
       {
-        title: 'Sikuani',
-        description: 'Leading community to promote collaboration in the tech ecosystem'
-      },
-      {
-        title: 'Negozee',
-        description: 'Business community for spanish speakers in the US'
-      },
-      {
-        title: 'AWS for startups',
-        description: 'Community by AWS to support founders using their platform'
+        title: 'Markketplace',
+        description: 'Open source ecommerce platform',
       },
       {
         title: "SHPE NYC",
         description: 'Largest association dedicated to fostering Hispanic leadership in the STEM field'
+      },
+      {
+        title: "Digital Ocean",
+        description: 'Cloud infrastructure provider'
       }
     ]}
     image={{
-      src: '~/assets/images/brooklyn/brooklyn-summit-calima-sponsors.png',
+      src: 'https://markketplace.nyc3.digitaloceanspaces.com/uploads/bd787ba7c8a5a507ab5d83f45cc4cb38.png',
       alt: 'Calima summit community partners',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Brooklyn</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">SOHO, manhattan</h3>
       Culture, Commerce, Community
     </Fragment>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
   </Content>
 
-<!--
+
   <CallToAction
     title="Learn More"
-    subtitle="Read the announcement in our blog and learn more about the event"
+    subtitle="Stay up to date with the latest news and announcements"
     actions={[
       {
         variant: 'primary',
-        text: 'Announcement (EN)',
-        href: 'https://caliman.org/calima-summit/',
+        text: 'Notion',
+        href: 'https://clubcalima.notion.site/summit-2025-nyc-tech-week?pvs=4/',
       },
       {
         variant: 'primary',
-        text: 'Anuncio (ES)',
-        href: 'https://caliman.org/calima-summit-es/',
+        text: 'Blog Post',
+        href: 'https://markket.place/blog/2025-calima-summit-2025---xnyctechweek',
       },
+      {
+        variant: 'primary',
+        text: 'Newsletter',
+        href: 'https://markket.place/newsletter',
+      }
     ]}
-  /> -->
+  />
 
 
+
+  <Hero image={{ src: 'https://markketplace.nyc3.digitaloceanspaces.com/uploads/3b96730454319d53cf46e3be33e724e9.png', alt: 'Participatory Community' }}>
+    <Fragment slot="title">
+       Participation <br/>
+        <small class="font-semibold">& Engagement opportunities</small>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Art display, Pitch competition, and more
+    </Fragment>
+  </Hero>
 
   <CallToAction
     title="Community partnerships and sponsor"
     subtitle="Learn more about opportunities to ensure the success of the event"
     actions={[
-      // {
-      //   variant: 'secondary',
-      //   text: 'Learn more',
-      //   href: '/summit/2024/sponsor',
-      // },
+    {
+        variant: 'secondary',
+        text: 'Sponsor',
+        href: 'https://www.markket.place/products/nyc-tech-summit-2025/',
+      },
+      {
+        variant: 'primary',
+        text: 'Participation form',
+        href: 'https://clubcalima.notion.site/158d3e32644180bb876bcd945b823a56?pvs=105',
+      },
+      {
+        variant: 'primary',
+        text: 'Accelerator',
+        href: 'https://markket.place/acelera',
+      }
+    ]}
+  />
+
+  <FAQs
+    title="FAQ"
+    subtitle="We want you to enjoy the City and make the most of your time"
+    columns={1}
+    items={[
+      {
+        title: 'When is the event taking place?',
+        description:
+          'The event will take place on June 4th and 5th, 2025 in SOHO, Manhattan',
+      },
+      {
+        title: 'What is the dress code?',
+        description:
+          'Business casual is recommended, but feel free to wear what makes you comfortable',
+      },
+      {
+        title: 'Can I get additional introductions & invitations?',
+        description:
+          'Yes, we will be hosting a series of events leading up to the summit, and are collaborating with other NYC Tech Week organizers',
+      },
+      {
+        title: 'When can I register for the event?',
+        description:
+          'Registration will open in Feb 2025. Sign up for our newsletter to be the first to know',
+      },
+      {
+        title: 'What payment methods do you accept?',
+        description:
+          'We accept major credit cards and online payment methods, and provide invoice to sponsors',
+      },
+      {
+        title: 'Is there compensation for artists and speakers?',
+        description: 'We are working with sponsors to offer compensations & reimbursements. And we want you to use the opportunity to close deals at the exclusive happy hours',
+      },
+      {
+        title: 'Are there any hidden fees?',
+        description:
+          'No, most attendees will join for free, and our sponsors will help determine the perks',
+      },
     ]}
   />
 </Layout>

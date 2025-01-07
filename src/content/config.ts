@@ -81,24 +81,24 @@ const postCollection = defineCollection({
 
 /**
  * The following collection requests data from our API, we use it to insert additional blog posts from the Calima Markket content API
- * https://api.morirsoniando.com/api/stores/2?populate=*
+ * https://api.markket.place/api/stores/2?populate=*
  * @TODO: Change the URL To point to your STRAPI source
  */
 const StrapiPosts = defineCollection({
-// https://api.morirsoniando.com/api/stores/2?populate[0]=articles&populate[1]=articles.SEO&populate[2]=SEO
+  // https://api.markket.place/api/stores/2?populate[0]=articles&populate[1]=articles.SEO&populate[2]=SEO
   loader: async () => {
-    const response = await fetch("https://api.markket.place/api/articles?populate=*");
+    const response = await fetch("https://api.markket.place/api/articles?populate=*&filters[store][slug][$eq]=calima&limit=100");
     const data = await response.json();
 
     return (data?.data || [])
-      .filter((article: API_Article) => article?.store?.id == 2)
+      .filter((article: API_Article) => article?.store?.slug == 'calima')
       .map((article: API_Article) => {
         let publishDate = article.createdAt ? dayjs(article.createdAt).toDate() : null;
         if (article.SEO?.metaDate) {
           publishDate = dayjs(article.SEO.metaDate).toDate();
         }
 
-        const updateDate = article.updatedAt ? dayjs(article.updatedAt).toDate() : null;
+        const updateDate = article.updatedAt ? dayjs(article.updatedAt).toDate() : publishDate;
         const image = article.cover?.url || article.SEO?.socialImage?.url || '';
 
         let permalink = `post/${article.id}/${slug(article?.Title)}`;
@@ -110,33 +110,28 @@ const StrapiPosts = defineCollection({
         const _slug = slug(article.SEO?.metaUrl || article.Title);
         const content = article.Content || [];
 
-      return {
-        source: 'api',
-        id: `markket-api-${article?.id}` as string,
-        title: article.Title,
-        content,
-        excerpt: article.SEO.metaDescription || '',
-        image,
-        category: 'api',
-        author: article.SEO.metaAuthor || 'Calima API',
-        publishDate,
-        updateDate,
-        tags: article.Tags.map((tag) => tag.Label),
-        draft: !article.publishedAt,
-        slug: _slug,
-        permalink,
-        metadata: {
-          title: article.SEO.metaTitle || article.Title,
-          description: '',
-          // openGraph: {
-          //   images: [
-          //     {
-          //       url: article.Image,
-          //     },
-          //   ],
-          // },
-        },
-      };
+        const _article = {
+          source: 'api',
+          id: `markket-api-${article?.id}` as string,
+          title: article.Title,
+          content,
+          excerpt: article.SEO.metaDescription || '',
+          image,
+          category: 'api',
+          author: article.SEO.metaAuthor || 'Calima via Markket API',
+          publishDate,
+          updateDate,
+          tags: article.Tags.map((tag) => tag.Label),
+          draft: !article.publishedAt,
+          slug: _slug,
+          permalink,
+          metadata: {
+            title: article.SEO.metaTitle || article.Title,
+            description: '',
+          },
+        };
+
+        return _article;
     });
   },
   schema: z.object({
