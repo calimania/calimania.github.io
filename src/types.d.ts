@@ -19,6 +19,7 @@ export interface API_Article {
   Content: Content[],
   store: {
     id: number,
+    slug: string,
   },
   SEO: {
     metaTitle: string,
