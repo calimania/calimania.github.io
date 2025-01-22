@@ -39,7 +39,26 @@ function transformContent(content) {
 function renderContent({ post }): JSX.Element {
   const transformedContent = transformContent(post.content || []);
 
-  return (<BlocksRenderer content={transformedContent} />);
+  return (<BlocksRenderer content={transformedContent} blocks={{
+    heading: ({ children, level }) => {
+      switch (level) {
+        case 1:
+          return <h1 className="mb-2 mt-1 dark:text-white text-4xl font-heading">{children}</h1>
+        case 2:
+          return <h2 className="mb-2 mt-1 dark:text-white text-3xl font-heading">{children}</h2>
+        case 3:
+          return <h3 className=" dark:text-white text-2xl font-heading">{children}</h3>
+        case 4:
+          return <h4 className=" dark:text-white text-2xl font-heading">{children}</h4>
+        case 5:
+          return <h5 className=" dark:text-white text-2xl font-heading">{children}</h5>
+        case 6:
+          return <h6 className=" dark:text-white text-2xl font-heading">{children}</h6>
+        default:
+          return <h2 className=" dark:text-white text-3xl font-heading">{children}</h2>
+      }
+    },
+  }} />);
 }
 
 
