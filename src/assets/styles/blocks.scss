@@ -216,3 +216,13 @@ $markket-cyan: #00ffff;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
+
+.dark .blocks-content {
+  p {
+    @apply text-gray-200;
+  }
+  a {
+    color: #FFC0CB;
+    text-decoration: underline;
+  }
+}
