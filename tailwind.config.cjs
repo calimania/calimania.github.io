@@ -11,6 +11,12 @@ module.exports = {
         default: 'var(--aw-color-text-default)',
         muted: 'var(--aw-color-text-muted)',
       },
+      markket: {
+        yellow: "#FFD700",
+        blue: "#0000FF",
+        pink: "#FFC0CB",
+        cyan: "#00FFFF",
+      },
       fontFamily: {
         sans: ['var(--aw-font-sans)', ...defaultTheme.fontFamily.sans],
         serif: ['var(--aw-font-serif)', ...defaultTheme.fontFamily.serif],

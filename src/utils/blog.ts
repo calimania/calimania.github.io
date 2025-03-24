@@ -102,12 +102,13 @@ const load = async function (): Promise<Array<Post>> {
   const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
   const strapiNormalizedPosts = strapiPosts.map(async (post) => await getNormalizedPost({
     ...post,
+    slug: post.slug,
     render: async () => ({
-      Content: post.Content,
+      Content: post?.Content,
       headings: [],
       remarkPluginFrontmatter: { readingTime: 0 }
     })
-  }));
+  } as CollectionEntry<'strapiPosts'>));
 
   const combinedPosts = [...normalizedPosts, ...strapiNormalizedPosts];
 

@@ -1,0 +1,218 @@
+$markket-yellow: #fbda0f;
+$markket-blue: #0051ba;
+$markket-pink: #e4007c;
+$markket-cyan: #00ffff;
+
+
+
+
+.blocks-content {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold mb-6;
+    background: linear-gradient(90deg, $markket-blue, $markket-pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h1 { @apply text-4xl md:text-5xl; }
+  h2 { @apply text-3xl md:text-4xl; }
+  h3 { @apply text-2xl md:text-3xl; }
+  h4 { @apply text-xl md:text-2xl; }
+  h5 { @apply text-lg md:text-xl; }
+  h6 { @apply text-base md:text-lg; }
+
+  .code-block-wrapper {
+    @apply my-6 rounded-lg overflow-hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+    // Style for Mantine's Prism component
+    .mantine-Prism-root {
+      @apply rounded-lg;
+      background: linear-gradient(
+        135deg,
+        rgba($markket-blue, 0.05) 0%,
+        rgba($markket-pink, 0.05) 100%
+      );
+    }
+
+    .mantine-Prism-line {
+      &:hover {
+        background: rgba($markket-yellow, 0.1);
+      }
+    }
+
+    .mantine-Prism-lineNumber {
+      color: rgba($markket-blue, 0.5);
+    }
+
+    .mantine-Prism-copy {
+      @apply opacity-50 transition-opacity duration-200;
+      &:hover {
+        @apply opacity-100;
+        color: $markket-pink;
+      }
+    }
+  }
+
+  .inline-code {
+    @apply font-mono px-1.5 py-0.5 rounded text-sm;
+    background: linear-gradient(
+      135deg,
+      rgba($markket-blue, 0.1),
+      rgba($markket-pink, 0.1)
+    );
+    border: 1px solid rgba($markket-yellow, 0.2);
+    color: $markket-pink;
+  }
+
+  // Special styling for code blocks that are direct children of paragraphs
+  p > code {
+    @apply mx-1;
+  }
+
+  // Paragraphs with better readability
+  p {
+    @apply text-gray-800 mb-6 leading-relaxed;
+
+    strong {
+      color: $markket-pink;
+    }
+  }
+
+  // Funky lists
+  ul, ol {
+    @apply mb-6 pl-6;
+  }
+
+  ul {
+    @apply list-disc;
+    li {
+      @apply mb-3 text-gray-800;
+      &::marker {
+        color: $markket-blue;
+      }
+      &:nth-child(2n)::marker {
+        color: $markket-pink;
+      }
+      &:nth-child(3n)::marker {
+        color: $markket-yellow;
+      }
+    }
+  }
+
+  .list-container {
+    @apply my-6 space-y-2;
+
+    .list-item {
+
+      span, strong {
+        @apply text-blue-800;
+      }
+
+      @apply relative pl-6 text-gray-700;
+      list-style: none; // Prevent default bullets
+
+      &::before {
+        content: '';
+        @apply absolute left-0 top-[0.6em] w-2.5 h-2.5 rounded-full;
+        background: linear-gradient(135deg, $markket-blue, $markket-pink);
+        transform: scale(0.4);
+        transition: transform 0.2s ease;
+      }
+
+      &:hover::before {
+        transform: scale(0.5);
+      }
+    }
+  }
+
+  a {
+    color: $markket-blue;
+    @apply relative inline-block;
+
+    &::after {
+      content: '';
+      // @apply absolute bottom-0 left-0 w-full h-0.5 bg-markket-yellow;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      color: $markket-pink;
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  blockquote {
+    @apply my-8 pl-6 py-2;
+    border-image: linear-gradient(to bottom, $markket-blue, $markket-pink) 1;
+    border-left-width: 4px;
+    border-left-style: solid;
+
+    p {
+      @apply text-gray-700 italic;
+    }
+  }
+
+  pre {
+    background: linear-gradient(45deg, rgba($markket-cyan, 0.1), rgba($markket-pink, 0.1));
+    @apply p-4 rounded-lg mb-6 overflow-x-auto;
+  }
+
+  code {
+    @apply font-mono px-1.5 py-0.5 rounded;
+    background-color: rgba($markket-yellow, 0.2);
+  }
+
+  table {
+    @apply w-full border-collapse mb-6;
+
+    th {
+      @apply p-3 font-semibold;
+      background: linear-gradient(90deg, rgba($markket-blue, 0.1), rgba($markket-pink, 0.1));
+    }
+
+    td {
+      @apply p-3 border-b border-gray-200;
+    }
+
+    tr:hover {
+      background-color: rgba($markket-yellow, 0.05);
+    }
+  }
+
+  .callout {
+    @apply p-4 rounded-lg mb-6;
+    background: linear-gradient(135deg, rgba($markket-blue, 0.1), rgba($markket-pink, 0.1));
+    border-left: 4px solid $markket-yellow;
+  }
+
+
+
+  .image-container {
+    @apply my-8 relative;
+
+    img {
+      @apply rounded-xl shadow-lg transition-all duration-300;
+
+      &:hover {
+        @apply shadow-xl transform -translate-y-1;
+      }
+    }
+
+    figcaption {
+      @apply mt-3 text-sm text-left text-gray-600;
+      background: linear-gradient(90deg, $markket-blue, $markket-pink);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .image-gallery {
+    @apply grid gap-6 my-8;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}

@@ -82,6 +82,9 @@ export default defineConfig({
   },
 
   vite: {
+    css: {
+      transformer: 'postcss',
+    },
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './src'),
