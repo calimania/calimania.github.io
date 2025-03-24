@@ -2,6 +2,8 @@ import { z, defineCollection, } from 'astro:content';
 import dayjs from 'dayjs';
 import slug from 'limax';
 import type { Content, API_Article } from '~/types.d';
+import { strapiLoader } from '~/utils/strapi.loader';
+import { markketplace } from '~/markket.config';
 
 /**
  * Define the recursive Content schema compatible with the Strapi Calima API
@@ -154,8 +156,16 @@ const StrapiPosts = defineCollection({
   }),
 });
 
+const pages = defineCollection({
+  loader: strapiLoader({
+    contentType: "page",
+    filter: `filters[store][slug][$eq]=${markketplace.STORE_SLUG}`,
+    populate: 'SEO.socialImage'
+  }),
+});
 
 export const collections = {
   post: postCollection,
   strapiPosts: StrapiPosts,
+  pages,
 };

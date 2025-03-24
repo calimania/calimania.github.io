@@ -1,181 +1,48 @@
 ---
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
-// import Stats from '~/components/widgets/Stats.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
+import { getCollection } from 'astro:content';
+import PageContent from '~/components/ui/block.contents';
+
+const pages = await getCollection("pages");
+const AboutPage = pages.find((page) => page?.data.slug === "about")?.data;
+
 const metadata = {
-  title: 'About us',
+  title: AboutPage?.Title || 'About us',
+  description: AboutPage?.SEO?.metaDescription || 'Learn about our Club ',
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    images: [
+      {
+        url: AboutPage?.SEO?.socialImage?.src || '~/assets/images/jopwell-collection/group-1.png',
+      },
+    ],
+  }
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
   <Hero
     tagline="About us"
     image={{
-      src: '~/assets/images/jopwell-collection/group-1.png',
-      alt: 'Nos encanta reirnos en el club calima',
+      src: AboutPage?.SEO?.socialImage?.url || '~/assets/images/jopwell-collection/group-1.png',
+      alt: AboutPage?.SEO?.socialImage?.alternativeText || 'Nos encanta reirnos en el club calima',
     }}
   >
     <Fragment slot="title">
-      Club calima - the largest latinx <br />
-      <span class="text-accent dark:text-white highlight"> executive community</span>
+      Club Calima <br />
+      <span class="text-accent dark:text-white highlight"> panamerican creative business community</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Promoting international collaboration by inviting business leaders from different nations to collaborate.
+      Promoting interdisciplinary international collaboration, between tech ecosystems, professional associations and artists
     </Fragment>
   </Hero>
-  <p class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify">
-      At Club Calima, we are an international and exclusive community of
-      experienced executives and providers who understand the challenges and
-      excitement of running a business. Whether you want to hire our execs for
-      strategic insights, chat about the latest industry trends, or get
-      customized solutions tailored to your unique needs, we’ve got you covered.
-      Our members also offer exclusive access to trials, resources, and premium
-      discounts.
-    <br/>
-    <br/>
-      Join us to become part of a select network that supports your journey from
-      inception to success. Let us be your trusted ally on this exciting and
-      confidential adventure.
-  </p>
-  <!-- Stats Widget ****************** -->
-  <h1 class="px-4 sm:px-6 max-w-3xl mx-auto text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading">
-    Misión
-  </h1>
-  <p class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify">
-      Consolidar una comunidad justa y equitativa, que proporcione las
-      condiciones necesarias para el ejercicio de los derechos y deberes
-      constitucionales, mediante la prestación oportuna de los Bienes, Obras y
-      Servicios en procura del mejoramiento del bienestar y la calidad de vida
-      de los miembros.
-  </p>
-  <p class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify">
-    To consolidate a fair and equitable community, which provides the necessary
-    conditions for the exercise of constitutional rights and duties, through the
-    timely provision of Goods, Works and Services in order to improve the
-    well-being and quality of life of members.
-  </p>
-
-  <h1 class="px-4 sm:px-6 max-w-3xl mx-auto text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading">
-    Visión
-  </h1>
-  <p class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify">
-    Seremos reconocidos en el ámbito nacional e internacional por nuestros
-    esfuerzos para mejorar la calidad de vida, con armónica relación ecológica y
-    ambiental, por una apuesta por la revitalización productiva y empresarial,
-    por los avances en transformar la matriz energética hacia fuentes
-    alternativas, por los procesos culturales y deportivos de alto valor, por
-    una apuesta de paz y reconciliación, por el reconocimiento ciudadano
-    respetuoso de la diversidad y por los avances relacionados con la protección
-    y expansión solidaria de la vida en todas sus manifestaciones
-  </p>
-  <p class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify">
-    We will be recognized in the national and international sphere for our work
-    to improve quality of life, with a harmonious ecological and environmental
-    relationship, for a commitment to productive and business revitalization,
-    for advances in transforming the energy matrix towards alternative sources,
-    for cultural and sports processes of high value, for a commitment to peace
-    and reconciliation, for respectful citizen recognition of diversity and for
-    advances related to the protection and solidarity expansion of life in all
-    its manifestations.
-  </p>
-
-  <Features3
-    title="Our programs"
-    subtitle="We graduated from business school with pretty good grades. now we're using our knowledge to help small business owners make it in this competitive world."
-    columns={3}
-    isBeforeContent={true}
-    items={[
-
-      {
-        title: 'Event production',
-        description:
-          'Conferences, summits, panels and community productions to advance our common goals',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Fractional executives',
-        description:
-          'Some of our members can make themselves available to help you with your business',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Workforce development',
-        description:
-          "Workshops and coaching services to level up",
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Fun and Workspaces',
-        description:
-          "Physical and virtual spaces for collaboration and fun",
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Country Club',
-        description:
-          "Inclussive access to exclusive spaces",
-        icon: 'tabler:template',
-      },
-    ]}
-  />
-
-
-
-  <Steps2
-    title="Our values"
-    subtitle="Our values are descriptive of our culture and evolving"
-    items={[
-      {
-        title: 'Big family',
-        description:
-          'Our community values creative cooperation and collaboration',
-      },
-      {
-        title: 'Constant Improvement',
-        description:
-          'The only way forward is faster',
-      },
-      {
-        title: 'Ethical Practices',
-        description:
-          'Convivencia, colaboración y lealtad',
-      },
-    ]}
-  />
-  <CallToAction
-  actions={[{
-    variant: "primary",
-    text: 'Values',
-    href: '/about/values',
-  }]}
-  title="Values"
-  subtitle="Our values help us to create the future we want to experience"
-/>
-
-  <CallToAction
-    actions={[{
-      variant: "primary",
-      text: 'Code of Conduct',
-      href: '/code-of-conduct',
-    }]}
-    title="Code of Conduct"
-    subtitle="Un comportamiento ético implica, entre otros aspectos, respeto, honestidad, responsabilidad y empatía"
-  />
-
-  <CallToAction
-    actions={[{
-      variant: "primary",
-      text: 'Portfolio & Partners',
-      href: '/about/partners',
-    }]}
-    title="Portfolio & Partners"
-    subtitle="Business suppliers and partners in our community publicly open for business"
-  />
+  <div class="max-w-3xl mx-auto mt-4 mb-8 px-4 "></p>
+    <PageContent params={ { page: AboutPage }} />
+  </div>
 </Layout>

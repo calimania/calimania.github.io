@@ -1,3 +1,4 @@
+@import "./blocks.scss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
