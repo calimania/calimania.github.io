@@ -61,7 +61,7 @@ export default function PageContent({ params }: PageContentProps) {
       <figure key={key} className="image-container">
         <a
           href={node.url}
-          target="_blank"
+          target={node.url?.startsWith('/') ? '_self' : '_blank'}
           rel="noopener noreferrer"
           className="block"
           title={node.children?.[0]?.text || ''}
@@ -105,7 +105,7 @@ export default function PageContent({ params }: PageContentProps) {
         <a
           key={key}
           href={node.url}
-          target="_blank"
+          target={node.url?.startsWith('/') ? '_self' : '_blank'}
           rel="noopener noreferrer"
           className="text-markket-blue hover:text-markket-pink transition-colors"
         >
