@@ -22,12 +22,19 @@ const page = Astro.props['page'] || {};
 
 const metadata = {
   title: page?.data?.Title || `About Pages`,
+  description: page?.data?.SEO?.metaDescription || ``,
+  keywords: page?.data?.SEO?.metaKeywords || '',
+  openGraph: {
+    type: 'website',
+    images: [
+      {
+        url: page?.data?.SEO?.socialImage?.src || '~/assets/images/jopwell-collection/group-1.png',
+      },
+    ],
+  },
   robots: {
     index: true,
     follow: true,
-  },
-  openGraph: {
-    type: 'website',
   },
 };
 ---
@@ -39,7 +46,7 @@ const metadata = {
     >
       {page?.data?.Title || 'Calima About'}
     </Headline>
-    <!-- {pages.each()} -->
     <PageContent params={ { page: page?.data as Page }} />
+    <!-- ALBUMS nested in page -->
   </section>
 </Layout>

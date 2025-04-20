@@ -6,6 +6,8 @@ import type { Page } from '~/types';
 import { getCollection } from 'astro:content';
 import PageContent from '~/components/ui/block.contents';
 
+import Item from '~/components/page/ListItem.astro';
+
 const pages = await getCollection("pages");
 const AboutPage = pages.find((page) => page?.data.slug === "about")?.data;
 
@@ -43,10 +45,15 @@ const metadata = {
       Promoting interdisciplinary international collaboration, between tech ecosystems, professional associations and artists
     </Fragment>
   </Hero>
-  <div class="max-w-3xl mx-auto mt-4 mb-8 px-4 "></p>
+  <div class="max-w-3xl mx-auto mt-4 mb-8 px-4 ">
     <PageContent params={ { page: AboutPage as Page}} />
   </div>
-  <div>
-
+  <div class="max-w-3xl mx-auto mt-4 mb-8 px-4 ">
+    {pages?.filter((p) => p?.data?.Active )?.map((page) => {
+      return (
+        <Item page={page?.data as Page} />
+      )
+    })}
   </div>
+   <!-- // ALBUMS -->
 </Layout>
