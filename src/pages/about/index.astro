@@ -2,6 +2,7 @@
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
+import type { Page } from '~/types';
 import { getCollection } from 'astro:content';
 import PageContent from '~/components/ui/block.contents';
 
@@ -43,6 +44,9 @@ const metadata = {
     </Fragment>
   </Hero>
   <div class="max-w-3xl mx-auto mt-4 mb-8 px-4 "></p>
-    <PageContent params={ { page: AboutPage }} />
+    <PageContent params={ { page: AboutPage as Page}} />
+  </div>
+  <div>
+
   </div>
 </Layout>
