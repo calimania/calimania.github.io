@@ -1,0 +1,52 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Headline from '~/components/blog/Headline.astro';
+import { getCollection } from 'astro:content';
+import type { Page } from '~/types';
+import PageContent from '~/components/ui/block.contents';
+
+export const prerender = true;
+
+export async function getStaticPaths () {
+  const pages = await getCollection("pages");
+
+  return pages.map((page) => ({
+    params: {
+      page: page?.data?.slug,
+    },
+    props: { page},
+  }));
+}
+
+const page = Astro.props['page'] || {};
+
+const metadata = {
+  title: page?.data?.Title || `About Pages`,
+  description: page?.data?.SEO?.metaDescription || ``,
+  keywords: page?.data?.SEO?.metaKeywords || '',
+  openGraph: {
+    type: 'website',
+    images: [
+      {
+        url: page?.data?.SEO?.socialImage?.src || '~/assets/images/jopwell-collection/group-1.png',
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
+    <Headline
+      subtitle={page?.data?.SEO?.metaDescription || 'About us'}
+    >
+      {page?.data?.Title || 'Calima About'}
+    </Headline>
+    <PageContent params={ { page: page?.data as Page }} />
+    <!-- ALBUMS nested in page -->
+  </section>
+</Layout>
