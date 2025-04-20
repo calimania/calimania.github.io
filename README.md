@@ -5,6 +5,42 @@
 
 Using the 🌟 _Most *starred* & *forked* Astro theme in 2022_. 🌟
 
+& [Markkët headless CMS](https://github.com/calimania/markketplace)
+
+## About this repo
+
+Club Calima is a creative business community, our website content was fully managed in markdown, and
+is transitioning to using the content layer to be more useful as a fork
+
+### Markkët
+
+Markkët is an open source electromechanical commerce ecosystem - it offers headless CMS, and
+extensions to offer online sales & customer relationships
+
+### Astro
+
+Astro powers the world's fastest marketing sites, blogs, e-commerce websites, and more
+
+### Github
+
+Github offers free code hosting, open source and collaboration features
+
+**Hosting** Additionally, you can fork this repo and easily manage your own website and domain
+
+### ENV VARS
+
+**Markkët** variables are used to identify the content that will be rendered in this store
+
+
+```
+STRAPI_URL=https://api.markket.place/
+STORE_SLUG=
+BASE_URL=http://localhost:4321/
+POSTHOG_ID=
+```
+
+See `src/markket.config.ts` for reference
+
 # 2024
 
 Now using Astro 5@beta, to take advantage of the Content Layer and plug-in CMS
