@@ -11,12 +11,12 @@ export interface Props {
 }
 
 const { page } = Astro.props;
-const image = page?.SEO?.metaImage?.url;
+const image = page?.SEO?.socialImage?.url;
 const link = `/about/${page.slug}`;
 
 ---
 
-<article class={`max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 ${image ? 'md:grid-cols-2' : ''}`}>
+<article class={`max-w-md mx-auto mb-8 md:max-w-none grid gap-6 md:gap-8 ${image ? 'md:grid-cols-2' : ''}`}>
   {
     image && (
       <a class="relative block group" href={link ?? 'javascript:void(0)'}>
@@ -43,8 +43,8 @@ const link = `/about/${page.slug}`;
       <div class="mb-1">
         <span class="text-sm">
           <Icon name="tabler:clock" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
-          <time datetime={String(page.createdAt)} class="inline-block">
-            {getFormattedDate(new Date(page.createdAt))}
+          <time datetime={String(page.updatedAt)} class="inline-block">
+            {getFormattedDate(new Date(page.updatedAt))} - last updated
           </time>
         </span>
       </div>
