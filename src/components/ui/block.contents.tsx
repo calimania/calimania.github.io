@@ -118,11 +118,11 @@ export default function PageContent({ params }: PageContentProps) {
     return (
       <figure key={key} className="my-8">
         <img
-          src={imageData.url}
-          alt={imageData.alternativeText || ''}
+          src={imageData?.url}
+          alt={imageData?.alternativeText || ''}
           className="rounded-lg w-full max-w-3xl mx-auto"
-          width={imageData.width}
-          height={imageData.height}
+          width={imageData?.width}
+          height={imageData?.height}
           loading="lazy"
         />
         {caption && (
@@ -138,13 +138,13 @@ export default function PageContent({ params }: PageContentProps) {
     if (block.type === 'paragraph') {
       const imageNodes = block.children.filter(
         child => child.type === 'link' &&
-          child.url?.match(/\.(jpg|jpeg|png|gif|webp)$/i) &&
+          child?.url?.match(/\.(jpg|jpeg|png|gif|webp)$/i) &&
           !renderedImages.has(child.url)
       );
 
       const textNodes = block.children.filter(
         child => !(child.type === 'link' &&
-          child.url?.match(/\.(jpg|jpeg|png|gif|webp)$/i))
+          child?.url?.match(/\.(jpg|jpeg|png|gif|webp)$/i))
       );
 
       return (

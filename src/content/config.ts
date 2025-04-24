@@ -12,10 +12,12 @@ const ContentSchema: z.ZodType<Content> = z.object({
   type: z.string(),
   children: z.array(z.lazy(() => ContentSchema)).optional(),
   url: z.string().optional(),
+  image: z.object({
+    url: z.string(),
+  }).optional(),
   text: z.string().optional(),
   bold: z.boolean().optional(),
 })
-
 
 const metadataDefinition = () =>
   z
