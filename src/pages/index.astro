@@ -8,123 +8,98 @@ import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import StepsImage from "../assets/images/jopwell-collection/standing.png";
-import SuitImage from "../assets/images/jopwell-collection/nice-suit-1.png";
+import StepsImage from "../assets/images/calima-summit-2024.png";
+import SuitImage from "../assets/images/dj-calima-summit.png";
 
+import { getCollection } from 'astro:content';
+
+const _store = await getCollection('stores');
+const store = _store?.[0]?.data;
 
 const metadata = {
-  title: 'Calima - Secret Executive Society',
+  title: store?.SEO?.metaTitle || 'Secret Society',
   ignoreTitleTemplate: true,
+  description: store?.SEO?.metaDescription || 'Community website',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
   <Hero
     actions={[
-      // { text: 'Inaugural Summit', href: '/2024/nyc-tech-week' },
       {text: 'Join us', href: '/communities'},
     ]}
     image={{ src: '~/assets/images/ilustration-calima.jpg', alt: 'Calima' }}
   >
     <Fragment slot="title">
-      <!-- <span class="hidden xl:inline">Secret</span>  -->
-      Executive community
-      promoting international business collaboration
+      Creative Community
     </Fragment>
-
     <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">Calima</span> hosts online and physical spaces.</span>
-      <!-- <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span> -->
-       Suitable for latin american executives in the US and abroad
+      <span class="font-semibold">Club Calima</span>
+      <span class="hidden sm:inline">colaboratorio</span>
     </Fragment>
   </Hero>
-
-  <!-- Note Widget ******************* -->
-
-  <Note />
-
-  <!-- Features Widget *************** -->
-
+  <Note title={store?.title} subtitle="Participatory International Network" />
   <Features
     id="features"
-    tagline="Features"
-    title="What you get with Calima"
-    subtitle="A very real and legitimate community that actually exists."
+    tagline="Values"
+    title="Powered by a mission"
+    subtitle="& One with nature"
     items={[
       {
-        title: 'Executive coaching',
+        title: 'Leadership & learning',
         description:
-          'Our network of members support each other as coaches and partners',
+          'supportive peer network',
         icon: 'tabler:brand-tailwind',
       },
       {
-        title: 'Deal flow',
+        title: 'Shared abundance',
         description:
-          'Find companies to acquire, invest and partner',
+          'Interoperability, open standards & funds',
         icon: 'tabler:components',
       },
       {
-        title: 'Technical services',
+        title: 'Technical expertise',
         description:
-          'Extend your team with our product experts',
+          'Privacy, security & reliability',
         icon: 'tabler:list-check',
       },
       {
-        title: 'Social clubs',
+        title: 'Trust & Social capital',
         description:
-          'Pop up events and pyshical locations coming soon',
+          'Collaborate & celebrate',
         icon: 'tabler:rocket',
-      },
-      {
-        title: 'Fractional executives',
-        description:
-          "Support your fundraising efforts with our experienced executives",
-        icon: 'tabler:arrows-right-left',
       },
       {
         title: 'Culture of feedback',
         description:
-          'Our values help us to create the future we want to experience',
-        icon: 'tabler:bulb',
-      },
-      {
-        title: 'Business connections',
-        description:
-          'Bureacracy is the gum that clogs the gears of human endeavor',
+          'Manifesting our shared vision',
         icon: 'tabler:bulb',
       },
     ]}
   />
-
-  <!-- Content Widget **************** -->
-
   <Content
     isReversed
-    tagline="Bienvenido a casa"
-    title="Club Calima is an exclusive multicultural, open, inviting, and inclusive community"
+    tagline="Mi casa es tu casa"
+    title="multicultural, inclusive exclusive community"
     items={[
       {
-        title: 'Built on top of Astro 3.0',
+        title: 'Creative Directors',
         description:
-          'This website is using HTML and other fancy technologies',
+          'Interdisciplinary team leadership',
       },
       {
-        title: 'Collaboration over competition',
+        title: 'Collaboration',
         description:
-          'We like to follow advice from vague motivational quotes and have found ourselves very successful that way',
+          'More friends & bigger businesses',
       },
       {
         title: 'Cross-browser compatibility',
         description:
-          'This site is optimized for Internet Explorer 5 and 720p monitors',
+          'Innovative engineering leadership',
       },
       {
-        title: 'Guided by Calima culture',
-        description:
-          'Guaqueros vallunos',
+        title: 'Calima culture',
+        description: 'From the Colombian valley of legends',
       },
     ]}
     image={{
@@ -134,42 +109,35 @@ const metadata = {
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Modern Approaches, Ancient Values</h3>
-       While our secret society has been around for decades its always been spearheading change
     </Fragment>
-
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
-
-  <!-- Content Widget **************** -->
-
-  <!-- Steps Widget ****************** -->
-
   <Steps
-    title="Get your dreams to the next level."
+    title="Manifest your wishes"
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Join</span>',
+        title: '<span class="font-medium">Join</span>',
         description:
-          "Connect with current members to get invited",
+          "Connect with other members",
         icon: 'tabler:package',
       },
       {
-        title: 'Step 2: <span class="font-medium">Learn from others</em>',
+        title: '<span class="font-medium">Learn</em>',
         description:
-          "Join our workshops and events to learn from our mentors and existing members",
+          "Join our workshops and events",
         icon: 'tabler:letter-case',
       },
       {
-        title: 'Step 3: <span class="font-medium">Find collaborators</span>',
+        title: '<span class="font-medium">Collaborate</span>',
         description:
-          'Share your projects and find investors and partners',
+          'Build with your new friends',
         icon: 'tabler:paint',
       },
       {
-        title: 'Ready!',
-        icon: 'tabler:check',
+        title: 'Launch!',
+        icon: 'tabler:swords',
       },
     ]}
     image={{
@@ -177,33 +145,31 @@ const metadata = {
       alt: 'Our executive members are standing tall',
     }}
   />
-
-  <!-- HighlightedPosts Widget ******* -->
-
   <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`Sharing useful updates about our community.`}
+    title="Blog"
+    information={`Announcements from our team & partners`}
   />
-
-  <!-- FAQs Widget ******************* -->
-
   <FAQs
     title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the power of our community."
-    tagline="FAQs"
+    subtitle=""
+    tagline="Cafecito"
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
         title: 'Why Calima?',
         description:
-          "We're the largest secret executive communtiy for latinx and BIPOC founders, investors and operators.",
+          "First & only secret community",
       },
       {
-        title: 'How to get involved?',
+        title: 'Participate?',
         description:
-          'Connect with a current member to get information about membership and the upcoming plans.',
+           'Ask a member',
+      },
+      {
+        title: 'Next summit?',
+        description:
+           'June 4 & 5, 2025, NYC',
       },
     ]}
   />
-
 </Layout>
