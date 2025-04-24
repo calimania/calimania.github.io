@@ -11,7 +11,6 @@ const metadata = {
   image: 'https://markketplace.nyc3.digitaloceanspaces.com/uploads/aa20f3b9950580db00c9dce1ba72a3e1.png'
 };
 ---
-
 <Layout metadata={metadata}>
   <Hero image={{ src: 'https://markketplace.nyc3.digitaloceanspaces.com/uploads/eba441f351a5c279f7abdcd5205c7f4d.png', alt: 'Mision Comercial Calima, SOHO, June 2025' }}>
     <Fragment slot="title">
@@ -22,9 +21,6 @@ const metadata = {
       connecting Pan American business leaders with local NYC artists
     </Fragment>
   </Hero>
-
-  <!-- Features3 Widget ************** -->
-
   <Features3
     title="Bienvenido a Niuyol"
     subtitle="June 4 & 5, 2025"
@@ -63,8 +59,6 @@ const metadata = {
     ]}
     classes={{ container: 'max-w-5xl' }}
   />
-
-
   <Content
     tagline="Community Partners"
     title="Past & Current Sponsors"
@@ -99,66 +93,32 @@ const metadata = {
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">SOHO, manhattan</h3>
       Culture, Commerce, Community
     </Fragment>
-
   </Content>
-
-
-  <CallToAction
-    title="Learn More"
-    subtitle="Stay up to date with the latest news and announcements"
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Notion',
-        href: 'https://clubcalima.notion.site/summit-2025-nyc-tech-week?pvs=4/',
-      },
-      {
-        variant: 'primary',
-        text: 'Blog Post',
-        href: 'https://markket.place/blog/2025-calima-summit-2025---xnyctechweek',
-      },
-      {
-        variant: 'primary',
-        text: 'Newsletter',
-        href: 'https://markket.place/newsletter',
-      }
-    ]}
-  />
-
-
-
   <Hero image={{ src: 'https://markketplace.nyc3.digitaloceanspaces.com/uploads/3b96730454319d53cf46e3be33e724e9.png', alt: 'Participatory Community' }}>
     <Fragment slot="title">
        Participation <br/>
         <small class="font-semibold">& Engagement opportunities</small>
     </Fragment>
     <Fragment slot="subtitle">
-      Art display, Pitch competition, and more
+      Art display, Interactivity, culture and more
     </Fragment>
   </Hero>
-
   <CallToAction
     title="Community partnerships and sponsor"
     subtitle="Learn more about opportunities to ensure the success of the event"
     actions={[
     {
         variant: 'secondary',
-        text: 'Sponsor',
-        href: 'https://www.markket.place/products/nyc-tech-summit-2025/',
+        text: 'Summit website',
+        href: 'https://summit.caliman.org/',
       },
       {
         variant: 'primary',
-        text: 'Participation form',
-        href: 'https://clubcalima.notion.site/158d3e32644180bb876bcd945b823a56?pvs=105',
-      },
-      {
-        variant: 'primary',
-        text: 'Accelerator',
-        href: 'https://markket.place/acelera',
+        text: 'Participate',
+        href: 'https://summit.caliman.org/about/participate/',
       }
     ]}
   />
-
   <FAQs
     title="FAQ"
     subtitle="We want you to enjoy the City and make the most of your time"
@@ -201,5 +161,3 @@ const metadata = {
     ]}
   />
 </Layout>
-
-

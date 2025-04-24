@@ -12,10 +12,12 @@ const ContentSchema: z.ZodType<Content> = z.object({
   type: z.string(),
   children: z.array(z.lazy(() => ContentSchema)).optional(),
   url: z.string().optional(),
+  image: z.object({
+    url: z.string(),
+  }).optional(),
   text: z.string().optional(),
   bold: z.boolean().optional(),
 })
-
 
 const metadataDefinition = () =>
   z
@@ -164,8 +166,17 @@ const pages = defineCollection({
   }),
 });
 
+const stores = defineCollection({
+  loader: strapiLoader({
+    contentType: "store",
+    filter: `filters[slug][$eq]=${markketplace.STORE_SLUG}`,
+    populate: 'SEO.socialImage'
+  }),
+});
+
 export const collections = {
   post: postCollection,
   strapiPosts: StrapiPosts,
   pages,
+  stores,
 };

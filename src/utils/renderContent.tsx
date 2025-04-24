@@ -10,22 +10,24 @@ import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 function transformContent(content) {
 
   return content.map(block => {
+    // if (block.type === 'image') {
+    //   console.log({ block, c: block.children })
+    // }
     if (block.type === 'paragraph' && block.children) {
+      // block.children = block.children.map(child => {
+      //   if (child.type === 'link' && child.url && child?.url?.endsWith('.png')) {
 
-      block.children = block.children.map(child => {
-        if (child.type === 'link' && child.url && child?.url?.endsWith('.png')) {
+      //     return ({
+      //       type: 'image',
+      //       image: {
+      //         url: child?.url || '/image.png',
+      //         alternativeText: child?.text || 'Image',
+      //       }
+      //     });
+      //   }
 
-          return ({
-            type: 'image',
-            image: {
-              url: child.url || '/image.png',
-              alternativeText: child.text || 'Image',
-            }
-          });
-        }
-
-        return child;
-      });
+      //   return child;
+      // });
     }
     return block;
   });
@@ -37,9 +39,9 @@ function transformContent(content) {
  * @returns
  */
 function renderContent({ post }): JSX.Element {
-  const transformedContent = transformContent(post.content || []);
+  // const transformedContent = transformContent();
 
-  return (<BlocksRenderer content={transformedContent} blocks={{
+  return (<BlocksRenderer content={post.content || []} blocks={{
     heading: ({ children, level }) => {
       switch (level) {
         case 1:
@@ -58,8 +60,14 @@ function renderContent({ post }): JSX.Element {
           return <h2 className=" dark:text-white text-3xl font-heading">{children}</h2>
       }
     },
+    image: (props) => {
+      return (
+        props?.image?.url && (
+          <img src={props.image.url} alt={props.image.alternativeText || void 0} style={{ maxWidth: '66%' }} />
+        )
+      )
+    }
   }} />);
 }
-
 
 export default renderContent;
