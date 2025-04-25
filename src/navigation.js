@@ -181,9 +181,9 @@ export const footerData = {
         { text: 'Markket.place', href: '/2024/markketplace' },
         { text: 'Sanar EHR', href: '/2024/calima-ehr' },
         { text: 'Community Summit 2025', href: '/summit/2025' },
-        { text: 'Club San Fernando NYS', href: '/san_fernando_notion' },
-        { text: 'Fractional Executives', href: '/2024/fractional-executives' },
-        { text: 'The Germinator Colombia', href: '/redirect/germinator' },
+        // { text: 'Club San Fernando NYS', href: '/san_fernando_notion' },
+        // { text: 'Fractional Executives', href: '/2024/fractional-executives' },
+        // { text: 'The Germinator Colombia', href: '/redirect/germinator' },
       ]
     },
     {
@@ -215,6 +215,6 @@ export const footerData = {
     { ariaLabel: 'CrunchBase', icon: 'tabler:brand-crunchbase', href: 'https://www.crunchbase.com/organization/kalima-d4f6' },
   ],
   footNote: `
-    Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="#/"> Calima</a> · All rights reserved.
+    Manifested by <a class="text-blue-600 hover:underline dark:text-gray-200" href="#/"> Calima</a> · All rights reserved.
   `,
 };
