@@ -26,7 +26,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <Hero
     actions={[
-      {text: 'Join us', href: '/communities'},
+      // {text: 'Join us', href: '/communities'},
     ]}
     image={{ src: '~/assets/images/ilustration-calima.jpg', alt: 'Calima' }}
   >
@@ -39,6 +39,7 @@ const metadata = {
     </Fragment>
   </Hero>
   <Note title={store?.title} subtitle="Participatory International Network" />
+
   <Features
     id="features"
     tagline="Values"
@@ -77,6 +78,17 @@ const metadata = {
       },
     ]}
   />
+  <Hero
+    actions={[
+      {text: 'Events', href: 'https://summit.caliman.org/events', target: "_blank" },
+    ]}
+    image={{ src: 'https://markketplace.nyc3.digitaloceanspaces.com/uploads/408bc90285413bd0368a7316dcb854ac.png', alt: 'Calima',  }}
+  >
+  <Fragment slot="subtitle">
+    <span class="font-semibold">Participatory</span>
+    <span class="hidden sm:inline">community</span>
+  </Fragment>
+  </Hero>
   <Content
     isReversed
     tagline="Mi casa es tu casa"
