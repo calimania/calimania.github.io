@@ -8,8 +8,8 @@ import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import StepsImage from "../assets/images/calima-summit-2024.png";
-import SuitImage from "../assets/images/dj-calima-summit.png";
+import StepsImage from '../assets/images/calima-summit-2024.png';
+import SuitImage from '../assets/images/dj-calima-summit.png';
 
 import { getCollection } from 'astro:content';
 
@@ -30,9 +30,7 @@ const metadata = {
     ]}
     image={{ src: '~/assets/images/ilustration-calima.jpg', alt: 'Calima' }}
   >
-    <Fragment slot="title">
-      Creative Community
-    </Fragment>
+    <Fragment slot="title">Creative Community</Fragment>
     <Fragment slot="subtitle">
       <span class="font-semibold">Club Calima</span>
       <span class="hidden sm:inline">colaboratorio</span>
@@ -48,46 +46,42 @@ const metadata = {
     items={[
       {
         title: 'Leadership & learning',
-        description:
-          'supportive peer network',
+        description: 'supportive peer network',
         icon: 'tabler:brand-tailwind',
       },
       {
         title: 'Shared abundance',
-        description:
-          'Interoperability, open standards & funds',
+        description: 'Interoperability, open standards & funds',
         icon: 'tabler:components',
       },
       {
         title: 'Technical expertise',
-        description:
-          'Privacy, security & reliability',
+        description: 'Privacy, security & reliability',
         icon: 'tabler:list-check',
       },
       {
         title: 'Trust & Social capital',
-        description:
-          'Collaborate & celebrate',
+        description: 'Collaborate & celebrate',
         icon: 'tabler:rocket',
       },
       {
         title: 'Culture of feedback',
-        description:
-          'Manifesting our shared vision',
+        description: 'Manifesting our shared vision',
         icon: 'tabler:bulb',
       },
     ]}
   />
   <Hero
-    actions={[
-      {text: 'Events', href: 'https://summit.caliman.org/events', target: "_blank" },
-    ]}
-    image={{ src: 'https://markketplace.nyc3.digitaloceanspaces.com/uploads/408bc90285413bd0368a7316dcb854ac.png', alt: 'Calima',  }}
+    actions={[{ text: 'Events', href: 'https://summit.caliman.org/events', target: '_blank' }]}
+    image={{
+      src: 'https://markketplace.nyc3.digitaloceanspaces.com/uploads/408bc90285413bd0368a7316dcb854ac.png',
+      alt: 'Calima',
+    }}
   >
-  <Fragment slot="subtitle">
-    <span class="font-semibold">Participatory</span>
-    <span class="hidden sm:inline">community</span>
-  </Fragment>
+    <Fragment slot="subtitle">
+      <span class="font-semibold">Participatory</span>
+      <span class="hidden sm:inline">community</span>
+    </Fragment>
   </Hero>
   <Content
     isReversed
@@ -96,18 +90,15 @@ const metadata = {
     items={[
       {
         title: 'Creative Directors',
-        description:
-          'Interdisciplinary team leadership',
+        description: 'Interdisciplinary team leadership',
       },
       {
         title: 'Collaboration',
-        description:
-          'More friends & bigger businesses',
+        description: 'More friends & bigger businesses',
       },
       {
         title: 'Cross-browser compatibility',
-        description:
-          'Innovative engineering leadership',
+        description: 'Innovative engineering leadership',
       },
       {
         title: 'Calima culture',
@@ -120,7 +111,9 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Modern Approaches, Ancient Values</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Modern Approaches, Ancient Values
+      </h3>
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -131,20 +124,17 @@ const metadata = {
     items={[
       {
         title: '<span class="font-medium">Join</span>',
-        description:
-          "Connect with other members",
+        description: 'Connect with other members',
         icon: 'tabler:package',
       },
       {
         title: '<span class="font-medium">Learn</em>',
-        description:
-          "Join our workshops and events",
+        description: 'Join our workshops and events',
         icon: 'tabler:letter-case',
       },
       {
         title: '<span class="font-medium">Collaborate</span>',
-        description:
-          'Build with your new friends',
+        description: 'Build with your new friends',
         icon: 'tabler:paint',
       },
       {
@@ -157,10 +147,7 @@ const metadata = {
       alt: 'Our executive members are standing tall',
     }}
   />
-  <BlogLatestPosts
-    title="Blog"
-    information={`Announcements from our team & partners`}
-  />
+  <BlogLatestPosts title="Blog" information={`Announcements from our team & partners`} />
   <FAQs
     title="Frequently Asked Questions"
     subtitle=""
@@ -169,18 +156,15 @@ const metadata = {
     items={[
       {
         title: 'Why Calima?',
-        description:
-          "First & only secret community",
+        description: 'First & only secret community',
       },
       {
         title: 'Participate?',
-        description:
-           'Ask a member',
+        description: 'Ask a member',
       },
       {
         title: 'Next summit?',
-        description:
-           'June 4 & 5, 2025, NYC',
+        description: 'Xcelerator Business Summit, October 7-8 2025, IL',
       },
     ]}
   />
