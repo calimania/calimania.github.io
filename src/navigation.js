@@ -177,10 +177,10 @@ export const footerData = {
       title: 'Services & Projects',
       links: [
         // { text: 'Xcelerator Business summit', href: '/2024/xcelerator/' },
-        // { text: 'Startup Weekend Latinx 2024', href: '/2024/startup-weekend-hhm' },
+        { text: 'Community Portal', href: '/2025/club-calima-portal' },
         { text: 'Markket.place', href: '/2024/markketplace' },
         { text: 'Sanar EHR', href: '/2024/calima-ehr' },
-        { text: 'Community Summit 2025', href: '/summit/2025' },
+        // { text: 'Community Summit 2025', href: '/summit/2025' },
         // { text: 'Club San Fernando NYS', href: '/san_fernando_notion' },
         // { text: 'Fractional Executives', href: '/2024/fractional-executives' },
         // { text: 'The Germinator Colombia', href: '/redirect/germinator' },
@@ -203,6 +203,9 @@ export const footerData = {
     {
       text: 'Documentation', href: getPermalink('/docs'),
     },
+    {
+      text: 'Community Portal', href: 'https://erp.caliman.org/', target: '_blank'
+    }
   ],
   socialLinks: [
     // { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
