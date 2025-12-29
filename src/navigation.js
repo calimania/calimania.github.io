@@ -189,10 +189,9 @@ export const footerData = {
     {
       title: 'Locations',
       links: [
+        { text: 'Capital Region, NY', href: '/upstate-ny' },
         { text: 'Cali', href: '/cali' },
-        { text: 'Cohoes', href: '/cohoes' },
-        { text: 'Troy', href: '/troy' },
-        { text: 'Jersey City', href: '/jersey-city' },
+        // { text: 'Jersey City', href: '/jersey-city' },
         { text: 'Brooklyn', href: '/brooklyn' },
         { text: 'Chicago', href: '/chicago' }
       ]

@@ -1,0 +1,89 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Cohoes & Troy, usptate New York',
+};
+---
+<style>
+  strong { color: #ff00ff; }
+  h1, h2, h3 {
+    color: #0157ad!important;
+  }
+</style>
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Club Calima "
+    image={{
+      src: '~/assets/images/capital-region-ny.jpg',
+      alt: 'Cohoes & Troy, usptate New York',
+    }}
+  >
+    <Fragment slot="title">
+      Capital Region
+  </Fragment>
+
+    <Fragment slot="subtitle">
+      Upstate New York, Albany area
+    </Fragment>
+  </Hero>
+  <div class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted  text-justify">
+    <h2 class="py-8 dark:text-white text-3xl font-heading">
+      Capital Region
+    </h2>
+    <p>
+      Our home in the Capital Region of New York, a place shaped by industry,
+      rivers, universities, and generations of builders and artists
+      <br>
+      <br>
+      Between the waterfalls and historic mills of Cohoes and the walkable,
+      artsy streets of Troy, the region share our values
+      about: craft, resilience, collaboration, and community
+      <br>
+      <br>
+
+    </p>
+    <p>
+      <strong class="text-magenta">Why the Capital Region?</strong>
+      <br>
+      Upstate New York offers a rare combination of advantages:
+      <br>
+    </p>
+    <ul class="px-10 py-4">
+      <li class="py-4">Access to nature, trails, rivers, and four true seasons</li>
+      <li class="py-4">Proximity to New York City</li>
+      <li class="py-4">Deep academic, artistic, and technical roots</li>
+      <li class="py-4">Independent maker spaces and fabrication shops</li>
+      <li class="py-4">Film and media scene</li>
+      <li class="py-4">A grounded cost of living</li>
+      <li class="py-4">Strong unions, co-ops, and civic organizations</li>
+    </ul>
+    <p>
+      The Capital Region sits at a crossroads of education, manufacturing,
+      healthcare, government, and the arts. RPI, SUNY, Siena, and other
+      institutions feed a steady stream of engineers, researchers, designers,
+      and organizers into the local ecosystem
+      <br>
+    </p>
+    <h2 class="py-8 dark:text-white text-3xl font-heading">
+      What We’re Building
+    </h2>
+    <p>
+      <strong>Co-Working & Creativity: </strong>
+      Join us in one of our flexible spaces, designed for collaboration, workshops, and head-down productivity.
+      <br>
+      <strong>Leadership Retreats: </strong>Step back, realign, and strategize for what’s next in a serene and inspiring environment.
+      <br>
+      <strong>Local Impact: </strong>Partner with us to support conservation, local artists, and the development of impactful small businesses.
+      <br>
+      <strong>Events & Gatherings:</strong> Upstate New York offers the perfect backdrop for intimate gatherings, summits, and unforgettable moments. Keep an eye out for upcoming events where you can connect with other leaders and creators in the Calima community.
+      <br>
+    </p>
+    <h2 class="py-8 dark:text-white text-3xl font-heading">
+      Welcome to Calima, Upstate Edition.
+    </h2>
+    <p><strong>Los derechos del hombre priman sobre las jerarquias impuestas</strong></p>
+  </div>
+</Layout>
